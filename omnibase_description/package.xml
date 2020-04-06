@@ -1,0 +1,13 @@
+<package format="2">
+	<name>omnibase_description</name>
+	<version>0.0.1</version>
+	<description>
+		This package constains the model files of the omnibase(omniwheeled robot)
+	</description>
+	<maintainer email="hardesh1deshpande@gmail.com">Harshal Deshpande</maintainer>
+
+	<author>Harshal Deshpande</author>
+
+	<buildtool_depend>catkin</buildtool_depend>
+
+</package>
