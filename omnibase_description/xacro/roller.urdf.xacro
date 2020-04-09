@@ -1,10 +1,7 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-	<xacro:macro
-		name="roller_macro"
-		params="parent name xyz rpy"
-	>
+	<xacro:macro name="roller_macro" params="parent name xyz rpy">
 
 		<link name="roller_${name}_rim_${parent}_link">
 
@@ -25,7 +22,7 @@
 
 				<geometry>
 
-					<mesh filename="package://open_base/mesh/roller.stl"/>
+					<mesh filename="package://omnibase_description/meshes/roller.stl"/>
 
 				</geometry>
 				<material name="roller_material">
@@ -39,25 +36,26 @@
 
 				<geometry>
 
-					<mesh filename="package://open_base/mesh/roller.stl"/>
+					<mesh filename="package://omnibase_description/meshes/roller.stl"/>
 
 				</geometry>
 
 			</collision>
 
 		</link>
-		<joint
-			name="roller_${name}_rim_${parent}_joint"
-			type="continuous"
-		>
+
+		
+
+		<gazebo reference="base_link">
+    		<material>Gazebo/White</material>
+  		</gazebo>
+
+		<joint name="roller_${name}_rim_${parent}_joint" type="continuous">
 
 			<parent link="rim_${parent}_link"/>
 			<child link="roller_${name}_rim_${parent}_link"/>
 			<axis xyz="0 0 1"/>
-			<origin
-				xyz="${xyz}"
-				rpy="${rpy}"
-			/>
+			<origin xyz="${xyz}" rpy="${rpy}"/>
 
 		</joint>
 

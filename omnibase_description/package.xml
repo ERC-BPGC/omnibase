@@ -4,10 +4,19 @@
 	<description>
 		This package constains the model files of the omnibase(omniwheeled robot)
 	</description>
+
+	<license>ERC</license>
+
 	<maintainer email="hardesh1deshpande@gmail.com">Harshal Deshpande</maintainer>
 
 	<author>Harshal Deshpande</author>
 
 	<buildtool_depend>catkin</buildtool_depend>
+	<buildtool_depend>catkin_simple</buildtool_depend>
+
+	<depend>geometry_msgs</depend>
+	<depend>rospy</depend>
+	<depend>roscpp</depend>
+	<depend>std_msgs</depend>
 
 </package>
