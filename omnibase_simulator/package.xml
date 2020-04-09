@@ -1,0 +1,30 @@
+<package format="2">
+  <name>omnibase_simulator</name>
+  <version>0.0.1</version>
+  <description>omnibase package has a 4 omni wheeled robot</description>
+
+  <maintainer email="hardesh1deshpande@gmail.com">Harshal Deshpande</maintainer>
+
+  <author>Harshal Deshpande</author>
+
+  <license>ERC</license>
+
+  <!-- <url type="website">https://github.com/ethz-asl/rotors_simulator</url> -->
+
+  <!-- Dependencies which this package needs to build itself. -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- Dependencies needed after this package is compiled. -->
+  <!-- <exec_depend>rotors_comm</exec_depend> -->
+  <!-- <exec_depend>rotors_control</exec_depend> -->
+  <exec_depend>omnibus_description</exec_depend>
+  <!-- <exec_depend>rotors_evaluation</exec_depend> -->
+  <!-- <exec_depend>rotors_gazebo</exec_depend> -->
+  <!-- <exec_depend>rotors_gazebo_plugins</exec_depend> -->
+  <!-- <exec_depend>rotors_joy_interface</exec_depend> -->
+  <!-- <exec_depend>rqt_rotors</exec_depend> -->
+
+  <export>
+    <metapackage/>
+  </export>
+</package>
