@@ -17,7 +17,7 @@
 	</inertial>
 	<visual>
 		<geometry>
-			<mesh filename="package://omnibase_description/meshes/new_base.stl"/>
+			<mesh filename="package://omnibase_description/meshes/sq_base.stl"/>
 		</geometry>
 		<material name="base_material">
 			<color rgba="1 1 1 1"/>
@@ -25,7 +25,7 @@
 	</visual>
 	<collision>
 		<geometry>
-			<mesh filename="package://omnibase_description/meshes/new_base.stl"/>
+			<mesh filename="package://omnibase_description/meshes/sq_base.stl"/>
 		</geometry>
 	</collision>
 
@@ -38,29 +38,50 @@
 		<origin xyz="0 0 0.05"/>
 	</joint>
 
-	<xacro:rim_macro
-		name="front_left"
-		color="0.3 0 0"
-		xyz="-0.05 0.05 0"
-		rpy="1.570796326794896 0 1.047197551196597"/>
-	<xacro:rim_macro
-		name="back_right"
-		color="0 0.3 0"
-		xyz="0.05 -0.05 0"
-		rpy="1.570796326794896 0 3.141592653589793"/>
+
 	<xacro:rim_macro
 		name="front_right"
+		color="0.3 0 0"
+		xyz="0.053181445 0.052283625 0"
+		rpy="1.570796326794896 0 -0.73"/>
+	
+	<xacro:rim_macro
+		name="back_right"
 		color="0 0 0.3"
-		xyz="0.05 0.05 0"
-		rpy="1.570796326794896 0 -1.047197551196597"/>
+		xyz="0.053181445 -0.052283625 0"
+		rpy="1.570796326794896 0 -2.42"/>
+
 	<xacro:rim_macro
 		name="back_left"
-		color="0 0 0.3"
-		xyz="-0.05 -0.05 0"
-		rpy="1.570796326794896 0 -1.047197551196597"/>
+		color="0 0.3 0"
+		xyz="-0.053181445 -0.052283625 0"
+		rpy="1.570796326794896 0 2.42"/>
+
+	<xacro:rim_macro
+		name="front_left"
+		color="0 0.2 0.2"
+		xyz="-0.053181445 0.052283625 0"
+		rpy="1.570796326794896 0 0.73"/>
+	
 
 	<gazebo reference="base_link">
     		<material>Gazebo/White</material>
+  	</gazebo>
+
+  	<gazebo reference="rim_front_right_link">
+    		<material>Gazebo/Red</material>
+  	</gazebo>
+
+	<gazebo reference="rim_back_right_link">
+    		<material>Gazebo/Green</material>
+  	</gazebo>
+
+  	<gazebo reference="rim_back_left_link">
+    		<material>Gazebo/Blue</material>
+  	</gazebo>
+
+	<gazebo reference="rim_front_left_link">
+    		<material>Gazebo/Yellow</material>
   	</gazebo>
 
   	<gazebo>

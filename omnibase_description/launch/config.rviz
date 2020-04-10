@@ -87,114 +87,186 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        rim_back_link:
+        rim_back_left_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        rim_left_link:
+          Value: true
+        rim_back_right_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        rim_right_link:
+          Value: true
+        rim_front_left_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        roller_e_rim_back_link:
+          Value: true
+        rim_front_right_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        roller_e_rim_left_link:
+          Value: true
+        roller_e_rim_back_left_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        roller_e_rim_right_link:
+          Value: true
+        roller_e_rim_back_right_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        roller_n_rim_back_link:
+          Value: true
+        roller_e_rim_front_left_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        roller_n_rim_left_link:
+          Value: true
+        roller_e_rim_front_right_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        roller_n_rim_right_link:
+          Value: true
+        roller_n_rim_back_left_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        roller_ne_rim_back_link:
+          Value: true
+        roller_n_rim_back_right_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        roller_ne_rim_left_link:
+          Value: true
+        roller_n_rim_front_left_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        roller_ne_rim_right_link:
+          Value: true
+        roller_n_rim_front_right_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        roller_nw_rim_back_link:
+          Value: true
+        roller_ne_rim_back_left_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        roller_nw_rim_left_link:
+          Value: true
+        roller_ne_rim_back_right_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        roller_nw_rim_right_link:
+          Value: true
+        roller_ne_rim_front_left_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        roller_s_rim_back_link:
+          Value: true
+        roller_ne_rim_front_right_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        roller_s_rim_left_link:
+          Value: true
+        roller_nw_rim_back_left_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        roller_s_rim_right_link:
+          Value: true
+        roller_nw_rim_back_right_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        roller_se_rim_back_link:
+          Value: true
+        roller_nw_rim_front_left_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        roller_se_rim_left_link:
+          Value: true
+        roller_nw_rim_front_right_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        roller_se_rim_right_link:
+          Value: true
+        roller_s_rim_back_left_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        roller_sw_rim_back_link:
+          Value: true
+        roller_s_rim_back_right_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        roller_sw_rim_left_link:
+          Value: true
+        roller_s_rim_front_left_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        roller_sw_rim_right_link:
+          Value: true
+        roller_s_rim_front_right_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        roller_w_rim_back_link:
+          Value: true
+        roller_se_rim_back_left_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        roller_w_rim_left_link:
+          Value: true
+        roller_se_rim_back_right_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        roller_w_rim_right_link:
+          Value: true
+        roller_se_rim_front_left_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
+        roller_se_rim_front_right_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        roller_sw_rim_back_left_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        roller_sw_rim_back_right_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        roller_sw_rim_front_left_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        roller_sw_rim_front_right_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        roller_w_rim_back_left_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        roller_w_rim_back_right_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        roller_w_rim_front_left_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        roller_w_rim_front_right_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
@@ -229,25 +301,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 0.33838945627212524
+      Distance: 0.2769509553909302
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.02022296003997326
-        Y: -0.022227730602025986
-        Z: 0.008041344583034515
+        X: 0.0017498834058642387
+        Y: 0.0008753163274377584
+        Z: -0.009973330423235893
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.9403986930847168
+      Pitch: 0.7853990197181702
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 2.2404000759124756
+      Yaw: 5.453580856323242
     Saved: ~
 Window Geometry:
   Displays:
@@ -266,4 +338,4 @@ Window Geometry:
     collapsed: false
   Width: 1200
   X: 60
-  Y: 30
+  Y: 27
