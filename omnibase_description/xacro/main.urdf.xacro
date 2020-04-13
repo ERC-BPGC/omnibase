@@ -36,7 +36,7 @@
 	<joint name="base_joint" type="fixed">
 		<parent link="origin_link" />
 		<child link="base_link" />
-		<origin xyz="0 0 0.05"/>
+		<origin xyz="0 0 0"/>
 	</joint>
 
 

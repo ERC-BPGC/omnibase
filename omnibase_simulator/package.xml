@@ -16,7 +16,7 @@
 
   <!-- Dependencies needed after this package is compiled. -->
   <!-- <exec_depend>rotors_comm</exec_depend> -->
-  <!-- <exec_depend>rotors_control</exec_depend> -->
+  <exec_depend>omnibus_control</exec_depend>
   <exec_depend>omnibus_description</exec_depend>
   <!-- <exec_depend>rotors_evaluation</exec_depend> -->
   <!-- <exec_depend>rotors_gazebo</exec_depend> -->
