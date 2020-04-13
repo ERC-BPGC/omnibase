@@ -2,6 +2,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="omnibase">
 
 	<xacro:include filename="$(find omnibase_description)/xacro/rim.urdf.xacro"/>
+	<xacro:include filename="$(find omnibase_description)/xacro/gazebo.urdf.xacro"/>
 
 	<link name="origin_link"/>
 	<link name="base_link">
@@ -64,30 +65,36 @@
 		rpy="1.570796326794896 0 0.73"/>
 	
 
-	<gazebo reference="base_link">
-    		<material>Gazebo/White</material>
-  	</gazebo>
+	<joint name="scan_joint" type="fixed">
+    	<parent link="base_link"/>
+    	<child link="base_scan"/>
+    	<origin xyz="-0.032 0 0.072" rpy="0 0 0"/>
+  	</joint>
 
-  	<gazebo reference="rim_front_right_link">
-    		<material>Gazebo/Red</material>
-  	</gazebo>
 
-	<gazebo reference="rim_back_right_link">
-    		<material>Gazebo/Green</material>
-  	</gazebo>
+	<link name="base_scan">
+    <visual>
+    	<origin xyz="0 0 0.0" rpy="0 0 0"/>
+    	<geometry>
+       		<mesh filename="package://omnibase_description/meshes/lds.stl" scale="0.0004 0.0004 0.0004"/>
+      	</geometry>
+      	<material name="dark"/>
+    </visual>
 
-  	<gazebo reference="rim_back_left_link">
-    		<material>Gazebo/Blue</material>
-  	</gazebo>
+    <!-- <collision>
+      <origin xyz="0.015 0 -0.0065" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.0315" radius="0.055"/>
+      </geometry>
+    </collision> -->
 
-	<gazebo reference="rim_front_left_link">
-    		<material>Gazebo/Yellow</material>
-  	</gazebo>
-
-  	<gazebo>
-		<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-		<robotNamespace>omnibase</robotNamespace>
-		</plugin>
-	</gazebo>
+    <inertial>
+      <mass value="0.114" />
+      <origin xyz="0 0 0" />
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0"
+               iyy="0.001" iyz="0.0"
+               izz="0.001" />
+    </inertial>
+  </link>
 
 </robot>
