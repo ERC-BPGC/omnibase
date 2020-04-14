@@ -1,8 +1,14 @@
 # omnibase
 
+To use this simulator use:
+```bash
+roslaunch omnibase_gazebo omnibase.launch
+```
 
 ### TODO:
-1- Add gazebo package
-2- Add sensors(lidar,etc.). add models
-2- Add controller package
-3- Better Organization
+1) Some tweaks in model
+2) Better Organization
+3) Documentation
+
+### Future Work:
+Writing a gazebo Plugin
