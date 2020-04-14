@@ -14,17 +14,8 @@
   <!-- Dependencies which this package needs to build itself. -->
   <buildtool_depend>catkin</buildtool_depend>
 
-  <!-- Dependencies needed after this package is compiled. -->
-  <!-- <exec_depend>rotors_comm</exec_depend> -->
   <exec_depend>omnibus_control</exec_depend>
   <exec_depend>omnibus_description</exec_depend>
-  <!-- <exec_depend>rotors_evaluation</exec_depend> -->
-  <!-- <exec_depend>rotors_gazebo</exec_depend> -->
-  <!-- <exec_depend>rotors_gazebo_plugins</exec_depend> -->
-  <!-- <exec_depend>rotors_joy_interface</exec_depend> -->
-  <!-- <exec_depend>rqt_rotors</exec_depend> -->
-
-  <export>
-    <metapackage/>
-  </export>
+  <exec_depend>omnibase_gazebo</exec_depend>
+  
 </package>
