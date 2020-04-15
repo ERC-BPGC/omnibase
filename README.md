@@ -5,16 +5,20 @@
 
 - Install some system dependencies by:
 ```bash
-sudo apt install python-wstool python-catkin-tools
+sudo apt install python-wstool python-catkin-tools  \
+	ros-melodic-joint-state-controller  \
+	ros-melodic-effort-controllers  \
+	ros-melodic-joint-trajectory-controller  \
+	ros-melodic-position-controllers
 ```
 
 - Package installation:
 ```bash
-# clone repo 
+# Clone repo 
 cd ~/catkin_ws/src
 git clone https://github.com/ERC-BPGC/omnibase.git
 
-# install dependencies from rosinstall using wstool
+# Install dependencies from rosinstall using wstool
 wstool init
 wstool merge omnibase/omnibase_https.rosinstall
 
@@ -31,7 +35,11 @@ source devel/setup.bash
 
 To use this simulator use:
 ```bash
+# To launch empty world
 roslaunch omnibase_gazebo omnibase.launch
+
+# To launch obstacle rich env
+roslaunch omnibase_gazebo omnibase_world1.launch
 ```
 
 ### TODO:

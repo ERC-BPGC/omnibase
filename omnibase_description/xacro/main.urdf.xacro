@@ -36,30 +36,30 @@
 	<joint name="base_joint" type="fixed">
 		<parent link="origin_link" />
 		<child link="base_link" />
-		<origin xyz="0 0 0.05"/>
+		<origin xyz="0 0 0.02"/>
 	</joint>
 
 
 	<xacro:rim_macro
-		name="front_right"
+		name="front_left"
 		color="0.3 0 0"
 		xyz="0.053 0.05300221419 0"
 		rpy="1.570796326794896 0 -0.81"/>
 	
 	<xacro:rim_macro
-		name="back_right"
+		name="front_right"
 		color="0 0 0.3"
 		xyz="0.053 -0.05300221419 0"
 		rpy="1.570796326794896 0 -2.39"/>
 
 	<xacro:rim_macro
-		name="back_left"
+		name="back_right"
 		color="0 0.3 0"
 		xyz="-0.053 -0.05300221419 0"
 		rpy="1.570796326794896 0 2.39"/>
 
 	<xacro:rim_macro
-		name="front_left"
+		name="back_left"
 		color="0 0.2 0.2"
 		xyz="-0.053 0.05300221419 0"
 		rpy="1.570796326794896 0 0.81"/>
@@ -68,7 +68,7 @@
 	<joint name="scan_joint" type="fixed">
     	<parent link="base_link"/>
     	<child link="base_scan"/>
-    	<origin xyz="-0.032 0 0.072" rpy="0 0 0"/>
+    	<origin xyz="-0.005 0 0.064" rpy="0 0 0"/>
   	</joint>
 
 
@@ -76,7 +76,7 @@
     <visual>
     	<origin xyz="0 0 0.0" rpy="0 0 0"/>
     	<geometry>
-       		<mesh filename="package://omnibase_description/meshes/lds.stl" scale="0.0004 0.0004 0.0004"/>
+       		<mesh filename="package://omnibase_description/meshes/lds.stl" scale="0.0003 0.0003 0.0003"/>
       	</geometry>
       	<material name="dark"/>
     </visual>
@@ -95,6 +95,29 @@
                iyy="0.001" iyz="0.0"
                izz="0.001" />
     </inertial>
-  </link>
+  	</link>
+
+  	<joint name="body_joint" type="fixed">
+  		<parent link="base_link"/>
+  		<child link="body_link"/>
+  		<origin xyz="0 0 0.03" rpy="1.57 0 3.14"/>
+  	</joint>
+
+  	<link name="body_link">
+  		<visual>
+  			<geometry>
+       			<mesh filename="package://omnibase_description/meshes/body.STL"/>
+      		</geometry>
+      		<material name="base_material"/>
+      	</visual>
+
+      	<inertial>
+      		<mass value="0.1" />
+      		<origin xyz="0 0 0" />
+      		<inertia 	ixx="0.000056443" ixy="0.0" ixz="0.0"
+               			iyy="0.0012923047" iyz="0.0"
+               			izz="0.000113232" />
+    	</inertial>
+  	</link>
 
 </robot>

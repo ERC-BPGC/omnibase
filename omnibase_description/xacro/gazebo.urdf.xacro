@@ -7,19 +7,19 @@
         <material>Gazebo/White</material>
     </gazebo>
 
-    <gazebo reference="rim_front_right_link">
+    <gazebo reference="rim_front_left_link">
         <material>Gazebo/Red</material>
     </gazebo>
 
-  <gazebo reference="rim_back_right_link">
+  <gazebo reference="rim_front_right_link">
         <material>Gazebo/Green</material>
     </gazebo>
 
-    <gazebo reference="rim_back_left_link">
+    <gazebo reference="rim_back_right_link">
         <material>Gazebo/Blue</material>
     </gazebo>
 
-  <gazebo reference="rim_front_left_link">
+  <gazebo reference="rim_back_left_link">
         <material>Gazebo/Yellow</material>
     </gazebo>
 

@@ -41,3 +41,51 @@ Momemnt of inertia matrix:
 0.0100    0.0000   -0.0000
     0.0000    0.0065    0.0000
    -0.0000    0.0000    0.0163
+
+
+
+FOR BODY:
+
+Mesh Bounding Box Size 1.115697 0.507135 0.659276
+Mesh Bounding Box Diag 1.391622 
+Mesh Bounding Box min -0.557849 -0.253568 -0.329638
+Mesh Bounding Box max 0.557849 0.253568 0.329638
+Mesh Surface Area is 3.049036
+Mesh Total Len of 24 Edges is 17.607010 Avg Len 0.733625
+Mesh Total Len of 24 Edges is 17.607010 Avg Len 0.733625 (including faux edges))
+Thin shell (faces) barycenter: 0.039936 -0.021228 -0.000000
+Vertices barycenter -0.035499 -0.002810 0.000000
+Mesh Volume is 0.339471
+Center of Mass is 0.042606 -0.016245 -0.000000
+Inertia Tensor is :
+| 0.019161 -0.002517 -0.000000 |
+| -0.002517 0.043870 -0.000000 |
+| -0.000000 -0.000000 0.038439 |
+Principal axes are :
+| 0.994954 0.100337 0.000000 |
+| 0.000000 -0.000000 -1.000000 |
+| -0.100337 0.994954 -0.000000 |
+axis momenta are :
+| 0.018907 0.038439 0.044123 |
+
+
+Mesh Volume is 0.000339471
+Inertia Tensor is :
+| 0.00000019161 -0.00000002517 -0.000000 |
+| -0.00000002517 0.00000043870 -0.000000 |
+| -0.000000 -0.000000 0.00000038439 |
+
+Mass : 0.1
+
+Final tensor:
+0.000056443   0         0
+0        0.0012923047   0
+0        0             0.000113232
+
+
+
+Joint Renaming:
+front_right to front_left
+back_right to front_right
+front_left to back_left
+back_left to back_right

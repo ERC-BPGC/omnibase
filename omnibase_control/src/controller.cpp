@@ -15,9 +15,9 @@ controller::controller(ros::NodeHandle& nh, ros::NodeHandle& nh_private):nh_(nh)
 
 	stop_bot();
 
-	ROS_INFO("----------------------------------------------------");
-	ROS_INFO("Controller Initialized");
-	ROS_INFO("----------------------------------------------------");
+	ROS_INFO("-----------------------------------------");
+	ROS_INFO("         Controller Initialized");
+	ROS_INFO("-----------------------------------------");
 }
 
 
@@ -39,10 +39,10 @@ void controller::cmd_vel_cb(const geometry_msgs::TwistStamped &vel)
 	y_dot = vel.twist.linear.y;
 
 	// get the constant from a yaml file
-	omega_1.data = vel_mel * (-x_dot - y_dot);
-	omega_2.data = vel_mel * (y_dot - x_dot);
-	omega_3.data = vel_mel * (-y_dot + x_dot);
-	omega_4.data = vel_mel * (y_dot + x_dot);
+	omega_1.data = vel_mul * (y_dot + x_dot);
+	omega_2.data = vel_mul * (-x_dot + y_dot);
+	omega_3.data = vel_mul * (x_dot - y_dot);
+	omega_4.data = vel_mul * (-x_dot - y_dot);
 
 	// std::cout << "omega_x is: " << omega_x << std::endl;
 	// std::cout << "omega_y is: " << omega_y << std::endl;
