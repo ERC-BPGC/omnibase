@@ -5,7 +5,7 @@
 		This package constains the model files of the omnibase(omniwheeled robot)
 	</description>
 
-	<license>ERC</license>
+	<license>BSD</license>
 
 	<maintainer email="hardesh1deshpande@gmail.com">Harshal Deshpande</maintainer>
 
