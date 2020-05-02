@@ -44,7 +44,9 @@
 		name="front_left"
 		color="0.3 0 0"
 		xyz="0.053 0.05300221419 0"
-		rpy="1.570796326794896 0 -0.81"/>
+		rpy="1.570796326794896 0 -0.81">
+	<mesh scale="10 10 10"/>
+	</xacro:rim_macro>	
 	
 	<xacro:rim_macro
 		name="front_right"
