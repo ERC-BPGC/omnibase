@@ -32,7 +32,7 @@
 				</material>
 
 			</visual>
-			<collision>
+			<!-- <collision>
 
 				<geometry>
 
@@ -40,7 +40,7 @@
 
 				</geometry>
 
-			</collision>
+			</collision> -->
 
 		</link>
 

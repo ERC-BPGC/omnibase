@@ -110,12 +110,12 @@
 			<type>transmission_interface/SimpleTransmission</type>
 			<joint name="rim_${name}_joint">
 
-				<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+				<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
 
 			</joint>
 			<actuator name="rim_${name}_motor">
 
-				<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+				<hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
 				<mechanicalReduction>1</mechanicalReduction>
 
 			</actuator>

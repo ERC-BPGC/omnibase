@@ -37,6 +37,6 @@
 		<remap from="/joint_states" to="/omnibase/joint_states"/>
 	</node>
 
-	<node name ="controller" pkg="omnibase_control" type="controller_node" output="screen"/> 
+	<!-- <node name ="controller" pkg="omnibase_control" type="controller_node" output="screen"/>  -->
 
 </launch>
