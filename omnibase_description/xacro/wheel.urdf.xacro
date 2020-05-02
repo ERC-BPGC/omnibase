@@ -2,7 +2,7 @@
 
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="husky_wheel">
 
-	<xacro:macro name="husky_wheel" params="wheel_prefix *joint_pose">
+	<xacro:macro name="omni_wheel" params="wheel_prefix *joint_pose">
 		<link name="${wheel_prefix}_wheel_link">
 			<inertial>
 				<mass value="0.2" />
@@ -12,14 +12,17 @@
 			<visual>
 				<origin xyz="0 0 0" rpy="0 0 0" />
 				<geometry>
-					<cylinder length="0.05" radius="0.1" />
+					<cylinder length="0.02" radius="0.04" />
 				</geometry>
 			</visual>
 			<collision>
 				<origin xyz="0 0 0" rpy="0 0 0" />
 				<geometry>
-					<cylinder length="0.05" radius="0.1" />
+					<cylinder length="0.02" radius="0.04" />
 				</geometry>
+				<surface>
+					<bounce restitution_coefficient="0.000001" />
+				</surface>
 			</collision>
 		</link>
 
@@ -29,13 +32,14 @@
 			<kp value="10000000.0" />
 			<kd value="1.0" />
 			<fdir1 value="0 0 1"/>
+			<maxContacts value= "1"/>
 		</gazebo>
 
 		<joint name="${wheel_prefix}_wheel" type="continuous">
 			<parent link="base_link"/>
 			<child link="${wheel_prefix}_wheel_link"/>
 			<xacro:insert_block name="joint_pose"/>
-			<axis xyz="0 1 0" rpy="0 0 0" />
+			<axis xyz="0 0 1" rpy="0 0 0" />
 		</joint>
 
 		<transmission name="${wheel_prefix}_wheel_trans" type="SimpleTransmission">

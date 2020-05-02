@@ -3,6 +3,7 @@
 
 	<xacro:include filename="$(find omnibase_description)/xacro/rim.urdf.xacro"/>
 	<xacro:include filename="$(find omnibase_description)/xacro/gazebo.urdf.xacro"/>
+	<xacro:include filename="$(find omnibase_description)/xacro/wheel.urdf.xacro" />
 
 	<link name="origin_link"/>
 	<link name="base_link">
@@ -39,33 +40,18 @@
 		<origin xyz="0 0 0.02"/>
 	</joint>
 
-
-	<xacro:rim_macro
-		name="front_left"
-		color="0.3 0 0"
-		xyz="0.053 0.05300221419 0"
-		rpy="1.570796326794896 0 -0.81">
-	<mesh scale="10 10 10"/>
-	</xacro:rim_macro>	
-	
-	<xacro:rim_macro
-		name="front_right"
-		color="0 0 0.3"
-		xyz="0.053 -0.05300221419 0"
-		rpy="1.570796326794896 0 -2.39"/>
-
-	<xacro:rim_macro
-		name="back_right"
-		color="0 0.3 0"
-		xyz="-0.053 -0.05300221419 0"
-		rpy="1.570796326794896 0 2.39"/>
-
-	<xacro:rim_macro
-		name="back_left"
-		color="0 0.2 0.2"
-		xyz="-0.053 0.05300221419 0"
-		rpy="1.570796326794896 0 0.81"/>
-	
+	<xacro:omni_wheel wheel_prefix="front_right">
+		<origin xyz="0.053 -0.05300221419 0" rpy="1.570796326794896 0 -2.39"/>
+	</xacro:omni_wheel>	
+	<xacro:omni_wheel wheel_prefix="back_right">
+		<origin xyz="-0.053 -0.05300221419 0" rpy="1.570796326794896 0 2.39"/>
+	</xacro:omni_wheel>	
+	<xacro:omni_wheel wheel_prefix="back_left">
+		<origin xyz="-0.053 0.05300221419 0" rpy="1.570796326794896 0 0.81"/>
+	</xacro:omni_wheel>	
+	<xacro:omni_wheel wheel_prefix="front_left">
+		<origin xyz="0.053 0.05300221419 0" rpy="1.570796326794896 0 -0.81"/>
+	</xacro:omni_wheel>	
 
 	<joint name="scan_joint" type="fixed">
     	<parent link="base_link"/>
