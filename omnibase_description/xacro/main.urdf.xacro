@@ -41,17 +41,17 @@
 	</joint>
 
 	<xacro:omni_wheel wheel_prefix="front_right">
-		<origin xyz="0.053 -0.05300221419 0" rpy="1.570796326794896 0 -2.39"/>
-	</xacro:omni_wheel>	
-	<xacro:omni_wheel wheel_prefix="back_right">
-		<origin xyz="-0.053 -0.05300221419 0" rpy="1.570796326794896 0 2.39"/>
-	</xacro:omni_wheel>	
-	<xacro:omni_wheel wheel_prefix="back_left">
-		<origin xyz="-0.053 0.05300221419 0" rpy="1.570796326794896 0 0.81"/>
+		<origin xyz="0.055 0.055 0" rpy="1.570796326794896 0 -0.78539816339"/>
 	</xacro:omni_wheel>	
 	<xacro:omni_wheel wheel_prefix="front_left">
-		<origin xyz="0.053 0.05300221419 0" rpy="1.570796326794896 0 -0.81"/>
+		<origin xyz="0.055 -0.055 0" rpy="1.570796326794896 0 -2.35619449019"/>
+	</xacro:omni_wheel>
+	<xacro:omni_wheel wheel_prefix="back_left">
+		<origin xyz="-0.055 -0.055 0" rpy="1.570796326794896 0 2.35619449019"/>
 	</xacro:omni_wheel>	
+	<xacro:omni_wheel wheel_prefix="back_right">
+		<origin xyz="-0.055 0.055 0" rpy="1.570796326794896 0 0.78539816339"/>
+	</xacro:omni_wheel>
 
 	<joint name="scan_joint" type="fixed">
     	<parent link="base_link"/>

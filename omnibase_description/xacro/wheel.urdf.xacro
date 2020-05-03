@@ -21,16 +21,16 @@
 					<cylinder length="0.01" radius="0.01" />
 				</geometry>
 				<surface>
-					<bounce restitution_coefficient="0.000001" />
+					<bounce restitution_coefficient="0.0001" />
 				</surface>
 			</collision>
 		</link>
 
 		<gazebo reference="${wheel_prefix}_wheel_link">
-			<mu1 value="0"/>
-			<mu2 value="1.0"/>
+			<mu1 value="0.2"/>
+			<mu2 value="1.5"/>
 			<kp value="10000000.0" />
-			<kd value="1.0" />
+			<kd value="10000.0" />
 			<fdir1 value="0 0 1"/>
 			<maxContacts value= "1"/>
 		</gazebo>
