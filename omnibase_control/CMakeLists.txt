@@ -22,6 +22,8 @@ cs_add_library(
 cs_add_executable(controller_node src/controller_node.cpp)
 target_link_libraries(controller_node ${PROJECT_NAME})
 
+cs_add_executable(teleop_node src/teleop.cpp)
+target_link_libraries(teleop_node ${PROJECT_NAME})
 
 cs_install()
 cs_export(LIBRARIES)
