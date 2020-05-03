@@ -6,38 +6,39 @@ omnibase:
 
     front_right_joint_velocity_controller:
         type: velocity_controllers/JointVelocityController
-        joint: rim_front_right_joint
+        joint: front_left_wheel
         pid: {p: 100.0, i: 0.01, d: 10.0}
 
     front_left_joint_velocity_controller:
         type: velocity_controllers/JointVelocityController
-        joint: rim_front_left_joint
+        joint: front_right_wheel
         pid: {p: 100.0, i: 0.01, d: 10.0}
 
     back_right_joint_velocity_controller:
         type: velocity_controllers/JointVelocityController
-        joint: rim_back_right_joint
+        joint: back_left_wheel
         pid: {p: 100.0, i: 0.01, d: 10.0}
 
     back_left_joint_velocity_controller:
         type: velocity_controllers/JointVelocityController
-        joint: rim_back_left_joint
+        joint: back_right_wheel
         pid: {p: 100.0, i: 0.01, d: 10.0}
 
-# /omnibase/gazebo_ros_control/pid_gains:
-#     rim_front_left_joint:
-#         p: 1.001
-#         i: 0.00
-#         d: 0.00
-#     rim_back_left_joint:
-#         p: 1.001
-#         i: 0.00
-#         d: 0.00
-#     rim_front_right_joint:
-#         p: 1.001
-#         i: 0.00
-#         d: 0.00
-#     rim_back_right_joint:
-#         p: 1.001
-#         i: 0.00
-#         d: 0.00
+/omnibase/gazebo_ros_control:
+    pid_gains:
+        front_left_wheel:
+            p: 1.001
+            i: 0.00
+            d: 0.00
+        front_right_wheel:
+            p: 1.001
+            i: 0.00
+            d: 0.00
+        back_left_wheel:
+            p: 1.001
+            i: 0.00
+            d: 0.00
+        back_right_wheel:
+            p: 1.001
+            i: 0.00
+            d: 0.00

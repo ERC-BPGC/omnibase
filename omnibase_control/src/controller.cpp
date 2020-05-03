@@ -5,6 +5,7 @@
 controller::controller(ros::NodeHandle& nh, ros::NodeHandle& nh_private):nh_(nh), nh_private_(nh_private)
 {
 	init_vars();
+	get_params();
 
 	vel_sub = nh_.subscribe("cmd_vel", 5, &controller::cmd_vel_cb, this);
 
@@ -33,19 +34,37 @@ void controller::init_vars()
 }
 
 
-void controller::cmd_vel_cb(const geometry_msgs::TwistStamped &vel)
-{
-	x_dot = vel.twist.linear.x;
-	y_dot = vel.twist.linear.y;
+void controller::cmd_vel_cb(const geometry_msgs::Twist &vel)
+{	
+	if ((vel.linear.x < max_lin_vel) && (vel.linear.x > -max_lin_vel))
+		x_dot = vel.linear.x;
+	else if (vel.linear.x > max_lin_vel)
+		x_dot = max_lin_vel;
+	else
+		x_dot = -max_lin_vel;
 
-	// get the constant from a yaml file
-	omega_1.data = vel_mul * (y_dot + x_dot);
-	omega_2.data = vel_mul * (-x_dot + y_dot);
-	omega_3.data = vel_mul * (x_dot - y_dot);
-	omega_4.data = vel_mul * (-x_dot - y_dot);
+	if ((vel.linear.y < max_lin_vel) && (vel.linear.y > -max_lin_vel))
+		y_dot = vel.linear.y;
+	else if (vel.linear.y > max_lin_vel)
+		y_dot = max_lin_vel;
+	else
+		y_dot = -max_lin_vel;
 
-	// std::cout << "omega_x is: " << omega_x << std::endl;
-	// std::cout << "omega_y is: " << omega_y << std::endl;
+
+	// Converting the velocity to wheel velocity
+	if (vel.angular.z == 0){
+		omega_1.data = vel_mul * (y_dot + x_dot);
+		omega_2.data = vel_mul * (-x_dot + y_dot);
+		omega_3.data = vel_mul * (x_dot - y_dot);
+		omega_4.data = vel_mul * (-x_dot - y_dot);
+	}
+	else
+	{
+		omega_1.data = vel_mul * vel.angular.z;
+		omega_2.data = vel_mul * vel.angular.z;
+		omega_3.data = vel_mul * vel.angular.z;
+		omega_4.data = vel_mul * vel.angular.z;
+	}
 
 	vel_publish();
 }
@@ -66,4 +85,22 @@ void controller::stop_bot()
 		back_right_cmd_pub.publish(omega_3);
 		back_left_cmd_pub.publish(omega_4);
 	}
+}
+
+void controller::get_params()
+{
+	if (nh_.hasParam("max_linear_velocity"))
+		nh_.getParam("max_linear_velocity", max_lin_vel);
+	else
+		max_lin_vel = 2;
+
+	if (nh_.hasParam("max_angular_velocity"))
+		nh_.getParam("max_angular_velocity", max_angular_vel);
+	else
+		max_angular_vel = 2;
+
+	if (nh_.hasParam("vel_mul_constant")) 
+		nh_.getParam("vel_mul_constant", vel_mul);
+	else
+		vel_mul = 2;
 }
