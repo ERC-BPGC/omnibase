@@ -15,13 +15,13 @@
 std::map<char, std::vector<float>> moveBindings
 {	
 	// lin_x, lin_y, ang_z
-	{'w', {1, 0, 0}},
-	{'x', {-1, 0, 0}},
-	{'a', {0, 1, 0}},
-	{'d', {0, -1, 0}},
+	{'w', {0.5, 0, 0}},
+	{'x', {-0.5, 0, 0}},
+	{'a', {0, 0.5, 0}},
+	{'d', {0, -0.5, 0}},
 	{'s', {0, 0, 0}},
-	{'q', {0, 0, -1}},
-	{'e', {0, 0, 1}},
+	{'q', {0, 0, -0.5}},
+	{'e', {0, 0, 0.5}},
 };
 
 void print_message(){
@@ -100,7 +100,7 @@ int main(int argc, char** argv)
 			{
 				x = x + moveBindings[key][0];
 				y = y + moveBindings[key][1];
-				ang_z = + moveBindings[key][2];
+				ang_z = ang_z + moveBindings[key][2];
 			}
 			else{
 				x = moveBindings[key][0];
