@@ -31,41 +31,42 @@ void controller::init_vars()
 
 	x_dot = 0;
 	y_dot = 0;
+	yaw = 0;
 }
 
 
 void controller::cmd_vel_cb(const geometry_msgs::Twist &vel)
 {	
-	if ((vel.linear.x < max_lin_vel) && (vel.linear.x > -max_lin_vel))
-		x_dot = vel.linear.x;
-	else if (vel.linear.x > max_lin_vel)
-		x_dot = max_lin_vel;
-	else
+	if (vel.linear.x < -max_lin_vel)
 		x_dot = -max_lin_vel;
-
-	if ((vel.linear.y < max_lin_vel) && (vel.linear.y > -max_lin_vel))
-		y_dot = vel.linear.y;
-	else if (vel.linear.y > max_lin_vel)
-		y_dot = max_lin_vel;
+	else if (abs(vel.linear.x) < max_lin_vel)
+		x_dot = vel.linear.x;
 	else
-		y_dot = -max_lin_vel;
+		x_dot = max_lin_vel;
 
+	if (vel.linear.y < -max_lin_vel)
+		y_dot = -max_lin_vel;
+	else if (abs(vel.linear.y) < max_lin_vel)
+		y_dot = vel.linear.y;
+	else
+		y_dot = max_lin_vel;
+
+	if (vel.angular.z > max_angular_vel){
+		yaw = max_angular_vel;
+	}
+	else if (vel.angular.z < -max_angular_vel){
+		yaw = -max_angular_vel;
+	}
+	else{
+		yaw = vel.angular.z;
+	}
 
 	// Converting the velocity to wheel velocity
-	if (vel.angular.z == 0){
-		omega_1.data = vel_mul * (y_dot + x_dot);
-		omega_2.data = vel_mul * (-x_dot + y_dot);
-		omega_3.data = vel_mul * (x_dot - y_dot);
-		omega_4.data = vel_mul * (-x_dot - y_dot);
-	}
-	else
-	{
-		omega_1.data = vel_mul * vel.angular.z;
-		omega_2.data = vel_mul * vel.angular.z;
-		omega_3.data = vel_mul * vel.angular.z;
-		omega_4.data = vel_mul * vel.angular.z;
-	}
-
+	omega_1.data = vel_mul * (y_dot + x_dot) + vel_mul * yaw;
+	omega_2.data = vel_mul * (-x_dot + y_dot) + vel_mul * yaw;
+	omega_3.data = vel_mul * (x_dot - y_dot) + vel_mul * yaw;
+	omega_4.data = vel_mul * (-x_dot - y_dot) + vel_mul * yaw;
+	
 	vel_publish();
 }
 

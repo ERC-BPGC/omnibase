@@ -32,6 +32,7 @@ private:
 	// std_msgs::Float64 omega;
 	std_msgs::Float64 omega_1, omega_2, omega_3, omega_4;
 	float x_dot, y_dot;
+	float yaw;
 
 	float vel_mul;
 
