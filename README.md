@@ -1,7 +1,7 @@
 # omnibase
 
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
-[![Build Status](http://build.ros.org/job/Mdoc__omnibase__ubuntu_bionic_amd64/2/badge/icon)](http://build.ros.org/job/Mdoc__omnibase__ubuntu_bionic_amd64/2/)
+[![Build Status](https://travis-ci.org/ERC-BPGC/omnibase.svg?branch=master)](https://travis-ci.org/ERC-BPGC/omnibase)
 
 ## Installations:
 - Install ROS melodic from [ROS website](https://www.ros.org/install/).
