@@ -13,7 +13,7 @@
 
 	<!-- Launch empty world Gazebo -->
 	<include file="$(find gazebo_ros)/launch/empty_world.launch">
-		<arg name="world_name" default="worlds/empty.world"/>
+		<!-- <arg name="world_name" value="$(find omnibase_gazebo)/worlds/trotbot.world"/> -->
 		<arg name="paused" value="false"/>
 		<arg name="gui" value="true"/>
 		<arg name="verbose" value="false"/>

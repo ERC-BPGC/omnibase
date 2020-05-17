@@ -5,7 +5,7 @@
 	<arg name="y" default="0.0" />
 	<arg name="z" default="0.0" />
 	
-	<param name="robot_description" command="$(find xacro)/xacro --inorder '$(find omnibase_description)/xacro/main.urdf.xacro'" />
+	<param name="robot_description" command="$(find xacro)/xacro --inorder '$(find omnibase_description)/xacro/main_new.urdf.xacro'" />
 	<rosparam file="$(find omnibase_control)/config/controllers.yaml" command="load"/>
 	<rosparam file="$(find omnibase_control)/config/params.yaml" command="load"/>
 
@@ -39,6 +39,6 @@
 		<remap from="/joint_states" to="/omnibase/joint_states"/>
 	</node>
 
-	<!-- <node name ="controller" pkg="omnibase_control" type="controller_node" output="screen"/>  -->
+	<node name ="controller" pkg="omnibase_control" type="controller_node" output="screen"/> 
 
 </launch>

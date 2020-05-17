@@ -27,7 +27,7 @@
 	</visual>
 	<collision>
 		<geometry>
-			<mesh filename="package://omnibase_description/meshes/trotbot_full_stl.stl"/>
+			<mesh filename="package://omnibase_description/meshes/trotbot_full_stl.stl" scale="0.0003 0.0003 0.0003"/>
 		</geometry>
 	</collision>
 

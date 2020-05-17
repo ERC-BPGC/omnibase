@@ -19,7 +19,7 @@
 	</inertial>
 	<visual>
 		<geometry>
-			<mesh filename="package://omnibase_description/meshes/sq_base.stl"/>
+			<mesh filename="package://omnibase_description/meshes/trotbot_full_stl.stl" scale="0.001 0.001 0.001"/>
 		</geometry>
 		<material name="base_material">
 			<color rgba="1 1 1 1"/>
@@ -27,7 +27,7 @@
 	</visual>
 	<collision>
 		<geometry>
-			<mesh filename="package://omnibase_description/meshes/sq_base.stl"/>
+			<mesh filename="package://omnibase_description/meshes/trotbot_full_stl.stl" scale="0.001 0.001 0.001"/>
 		</geometry>
 	</collision>
 
@@ -41,16 +41,16 @@
 	</joint>
 
 	<xacro:omni_wheel wheel_prefix="front_right">
-		<origin xyz="0.055 0.055 0" rpy="1.570796326794896 0 -0.78539816339"/>
+		<origin xyz="0.22 0.22 0" rpy="1.570796326794896 0 -0.78539816339"/>
 	</xacro:omni_wheel>	
 	<xacro:omni_wheel wheel_prefix="front_left">
-		<origin xyz="0.055 -0.055 0" rpy="1.570796326794896 0 -2.35619449019"/>
+		<origin xyz="0.22 -0.22 0" rpy="1.570796326794896 0 -2.35619449019"/>
 	</xacro:omni_wheel>
 	<xacro:omni_wheel wheel_prefix="back_left">
-		<origin xyz="-0.055 -0.055 0" rpy="1.570796326794896 0 2.35619449019"/>
+		<origin xyz="-0.22 -0.22 0" rpy="1.570796326794896 0 2.35619449019"/>
 	</xacro:omni_wheel>	
 	<xacro:omni_wheel wheel_prefix="back_right">
-		<origin xyz="-0.055 0.055 0" rpy="1.570796326794896 0 0.78539816339"/>
+		<origin xyz="-0.22 0.22 0" rpy="1.570796326794896 0 0.78539816339"/>
 	</xacro:omni_wheel>
 
 	<joint name="scan_joint" type="fixed">
@@ -92,13 +92,6 @@
   	</joint>
 
   	<link name="body_link">
-  		<visual>
-  			<geometry>
-       			<mesh filename="package://omnibase_description/meshes/body.STL"/>
-      		</geometry>
-      		<material name="base_material"/>
-      	</visual>
-
       	<inertial>
       		<mass value="0.1" />
       		<origin xyz="0 0 0" />
