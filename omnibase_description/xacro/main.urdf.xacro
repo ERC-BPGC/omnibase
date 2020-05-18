@@ -19,15 +19,13 @@
 	</inertial>
 	<visual>
 		<geometry>
-			<mesh filename="package://omnibase_description/meshes/trotbot_full_stl.stl" scale="0.001 0.001 0.001"/>
+			<mesh filename="package://omnibase_description/meshes/trotbot.dae" />
 		</geometry>
-		<material name="base_material">
-			<color rgba="1 1 1 1"/>
-		</material>
+		
 	</visual>
 	<collision>
 		<geometry>
-			<mesh filename="package://omnibase_description/meshes/trotbot_full_stl.stl" scale="0.001 0.001 0.001"/>
+			<mesh filename="package://omnibase_description/meshes/trotbot.dae" />
 		</geometry>
 	</collision>
 

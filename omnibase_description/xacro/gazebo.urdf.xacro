@@ -3,23 +3,26 @@
   <xacro:arg name="laser_visual" default="false"/>
   <xacro:arg name="imu_visual"   default="false"/>
 
-  <gazebo reference="base_link">
+  <!-- <gazebo reference="base_link">
         <material>Gazebo/White</material>
-    </gazebo>
+    </gazebo> -->
+    <!-- <gazebo reference="base_link">
+			<material>Gazebo/Yellow</material>
+		</gazebo> -->
 
-    <gazebo reference="rim_front_left_link">
+    <gazebo reference="front_left_wheel_link">
         <material>Gazebo/Red</material>
     </gazebo>
 
-  <gazebo reference="rim_front_right_link">
+  <gazebo reference="front_right_wheel_link">
         <material>Gazebo/Green</material>
     </gazebo>
 
-    <gazebo reference="rim_back_right_link">
+    <gazebo reference="back_right_wheel_link">
         <material>Gazebo/Blue</material>
     </gazebo>
 
-  <gazebo reference="rim_back_left_link">
+  <gazebo reference="back_left_wheel_link">
         <material>Gazebo/Yellow</material>
     </gazebo>
 
