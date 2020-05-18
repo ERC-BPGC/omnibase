@@ -1,0 +1,55 @@
+pipeline {
+    agent none
+    stages {
+        stage('Build and Test on Ubuntu') {
+            parallel {
+                stage('Ubuntu 18.04') {
+                    agent {
+                        dockerfile {
+                            filename 'Dockerfile_melodic'
+                            args '-e WORKSPACE=$WORKSPACE'
+                        }
+                    }
+                    environment {
+                        evaluator="/root/"
+                    }
+                }
+            }
+        }
+    }
+    post {
+    always {
+      node(null) {
+        echo 'Jenkins Finished'
+        // Clear the source and build dirs before the next run
+        // deleteDir()
+      }
+    }
+    success {
+      node(null) {
+        echo 'Success!'
+        // slackSend color: 'good',
+        //           message: "Successful Build <${env.BUILD_URL}|#${env.BUILD_NUMBER}> - Branch ${env.GIT_BRANCH} finished in ${currentBuild.durationString}."
+      }
+    }
+    failure {
+      node(null) {
+        echo 'Fail!'
+        // slackSend color: 'danger', message: "Failed - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
+      }
+    }
+    unstable {
+      node(null) {
+        echo 'Unstable!'
+        // slackSend color: 'warning', message: "Unstable - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
+      }
+    }
+    cleanup {
+      // Clear the source and build dirs before next run
+      // TODO this might delete the .csv file for plots?
+      node(null) {
+        // cleanWs()
+      }
+    }
+  }
+}
