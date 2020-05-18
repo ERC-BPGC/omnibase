@@ -12,7 +12,8 @@ sudo apt install python-wstool python-catkin-tools  \
 	ros-melodic-joint-state-controller  \
 	ros-melodic-effort-controllers  \
 	ros-melodic-joint-trajectory-controller  \
-	ros-melodic-position-controllers
+	ros-melodic-position-controllers  \
+	ros-melodic-velocity-controllers
 ```
 
 - Package installation:
@@ -48,7 +49,3 @@ roslaunch omnibase_gazebo omnibase_world1.launch
 rosrun omnibase_control teleop_node
 ```
 
-### TODO:
-1) Some tweaks in model
-2) Better Organization
-3) Documentation
