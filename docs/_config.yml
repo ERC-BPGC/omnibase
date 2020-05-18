@@ -31,7 +31,7 @@ exclude:
   - .idea/
   - .gitignore
   - README.md
-timezone: Europe/Berlin
+timezone: India
 defaults:
 - scope:
     path: _posts
