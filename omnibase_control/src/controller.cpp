@@ -3,8 +3,8 @@
 
 
 #define sqrt_2 1.41421356237
-#define wheel_rad 0.12
-#define diag_dist 0.31112698372
+// #define wheel_rad 0.12
+// #define diag_dist 0.31112698372
 
 controller::controller(ros::NodeHandle& nh, ros::NodeHandle& nh_private):nh_(nh), nh_private_(nh_private)
 {
@@ -112,4 +112,11 @@ void controller::get_params()
 		nh_.getParam("vel_mul_constant", vel_mul);
 	else
 		vel_mul = 2;
+
+	if (nh_.hasParam("diag_dist"))
+		nh_.getParam("diag_dist", diag_dist);
+
+	if (nh_.hasParam("wheel_rad"))
+		nh_.getParam("wheel_rad", wheel_rad);
+	
 }
