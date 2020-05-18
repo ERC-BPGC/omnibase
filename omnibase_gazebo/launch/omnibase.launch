@@ -7,7 +7,7 @@
 	
 	<param name="robot_description" command="$(find xacro)/xacro --inorder '$(find omnibase_description)/xacro/main.urdf.xacro'" />
 	<rosparam file="$(find omnibase_control)/config/controllers.yaml" command="load"/>
-	<rosparam file="$(find omnibase_control)/config/params.yaml" command="load"/>
+	<rosparam file="$(find omnibase_control)/config/params_trot.yaml" command="load"/>
 
 	<node pkg="tf" type="static_transform_publisher" name="laser" args="0 0 0 0 0 0 world base_link 10"/>
 
