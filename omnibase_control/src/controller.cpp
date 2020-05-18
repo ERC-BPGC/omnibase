@@ -2,6 +2,9 @@
 #include <ros/ros.h>
 
 
+#def sqrt_2 1.41421356237
+#def wheel_rad 0.12
+
 controller::controller(ros::NodeHandle& nh, ros::NodeHandle& nh_private):nh_(nh), nh_private_(nh_private)
 {
 	init_vars();
@@ -66,6 +69,10 @@ void controller::cmd_vel_cb(const geometry_msgs::Twist &vel)
 	omega_2.data = vel_mul * (-x_dot + y_dot) + vel_mul * yaw;
 	omega_3.data = vel_mul * (x_dot - y_dot) + vel_mul * yaw;
 	omega_4.data = vel_mul * (-x_dot - y_dot) + vel_mul * yaw;
+	omega_1.data /= wheel_rad*sqrt_2;
+	omega_2.data /= wheel_rad*sqrt_2;
+	omega_3.data /= wheel_rad*sqrt_2;
+	omega_4.data /= wheel_rad*sqrt_2;
 	
 	vel_publish();
 }
