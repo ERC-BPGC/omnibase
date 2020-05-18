@@ -34,7 +34,7 @@ private:
 	float x_dot, y_dot;
 	float yaw;
 
-	float vel_mul;
+	float vel_mul, wheel_rad, diag_dist;
 
 	float max_lin_vel, max_angular_vel;
 };

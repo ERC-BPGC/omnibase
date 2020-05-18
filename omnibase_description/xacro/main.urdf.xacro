@@ -8,7 +8,7 @@
 	<link name="origin_link"/>
 	<link name="base_link">
 	<inertial>
-		<mass value="0.08723"/>
+		<mass value="2"/>
 		<inertia
 			ixx="0.0100"
 			ixy="0"
@@ -19,15 +19,13 @@
 	</inertial>
 	<visual>
 		<geometry>
-			<mesh filename="package://omnibase_description/meshes/sq_base.stl"/>
+			<mesh filename="package://omnibase_description/meshes/trotbot.dae" />
 		</geometry>
-		<material name="base_material">
-			<color rgba="1 1 1 1"/>
-		</material>
+		
 	</visual>
 	<collision>
 		<geometry>
-			<mesh filename="package://omnibase_description/meshes/sq_base.stl"/>
+			<mesh filename="package://omnibase_description/meshes/trotbot.dae" />
 		</geometry>
 	</collision>
 
@@ -41,22 +39,22 @@
 	</joint>
 
 	<xacro:omni_wheel wheel_prefix="front_right">
-		<origin xyz="0.055 0.055 0" rpy="1.570796326794896 0 -0.78539816339"/>
+		<origin xyz="0.22 0.22 0" rpy="1.570796326794896 0 -0.78539816339"/>
 	</xacro:omni_wheel>	
 	<xacro:omni_wheel wheel_prefix="front_left">
-		<origin xyz="0.055 -0.055 0" rpy="1.570796326794896 0 -2.35619449019"/>
+		<origin xyz="0.22 -0.22 0" rpy="1.570796326794896 0 -2.35619449019"/>
 	</xacro:omni_wheel>
 	<xacro:omni_wheel wheel_prefix="back_left">
-		<origin xyz="-0.055 -0.055 0" rpy="1.570796326794896 0 2.35619449019"/>
+		<origin xyz="-0.22 -0.22 0" rpy="1.570796326794896 0 2.35619449019"/>
 	</xacro:omni_wheel>	
 	<xacro:omni_wheel wheel_prefix="back_right">
-		<origin xyz="-0.055 0.055 0" rpy="1.570796326794896 0 0.78539816339"/>
+		<origin xyz="-0.22 0.22 0" rpy="1.570796326794896 0 0.78539816339"/>
 	</xacro:omni_wheel>
 
 	<joint name="scan_joint" type="fixed">
     	<parent link="base_link"/>
     	<child link="base_scan"/>
-    	<origin xyz="-0.005 0 0.064" rpy="0 0 0"/>
+    	<origin xyz="-0.005 0 0.235" rpy="0 0 0"/>
   	</joint>
 
 
@@ -64,7 +62,7 @@
     <visual>
     	<origin xyz="0 0 0.0" rpy="0 0 0"/>
     	<geometry>
-       		<mesh filename="package://omnibase_description/meshes/lds.stl" scale="0.0003 0.0003 0.0003"/>
+       		<mesh filename="package://omnibase_description/meshes/lds.stl" scale="0.00085 0.00085 0.00085"/>
       	</geometry>
       	<material name="dark"/>
     </visual>
@@ -92,13 +90,6 @@
   	</joint>
 
   	<link name="body_link">
-  		<visual>
-  			<geometry>
-       			<mesh filename="package://omnibase_description/meshes/body.STL"/>
-      		</geometry>
-      		<material name="base_material"/>
-      	</visual>
-
       	<inertial>
       		<mass value="0.1" />
       		<origin xyz="0 0 0" />

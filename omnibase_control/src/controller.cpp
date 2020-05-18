@@ -2,6 +2,10 @@
 #include <ros/ros.h>
 
 
+#define sqrt_2 1.41421356237
+// #define wheel_rad 0.12
+// #define diag_dist 0.31112698372
+
 controller::controller(ros::NodeHandle& nh, ros::NodeHandle& nh_private):nh_(nh), nh_private_(nh_private)
 {
 	init_vars();
@@ -62,10 +66,14 @@ void controller::cmd_vel_cb(const geometry_msgs::Twist &vel)
 	}
 
 	// Converting the velocity to wheel velocity
-	omega_1.data = vel_mul * (y_dot + x_dot) + vel_mul * yaw;
-	omega_2.data = vel_mul * (-x_dot + y_dot) + vel_mul * yaw;
-	omega_3.data = vel_mul * (x_dot - y_dot) + vel_mul * yaw;
-	omega_4.data = vel_mul * (-x_dot - y_dot) + vel_mul * yaw;
+	omega_1.data = sqrt_2*(y_dot + x_dot) + 2 * yaw * diag_dist;
+	omega_2.data = sqrt_2*(-x_dot + y_dot) + 2 * yaw * diag_dist;
+	omega_3.data = sqrt_2*(x_dot - y_dot) + 2 * yaw * diag_dist;
+	omega_4.data = sqrt_2*(-x_dot - y_dot) + 2 * yaw * diag_dist;
+	omega_1.data /= 1*wheel_rad;
+	omega_2.data /= 1*wheel_rad;
+	omega_3.data /= 1*wheel_rad;
+	omega_4.data /= 1*wheel_rad;
 	
 	vel_publish();
 }
@@ -104,4 +112,11 @@ void controller::get_params()
 		nh_.getParam("vel_mul_constant", vel_mul);
 	else
 		vel_mul = 2;
+
+	if (nh_.hasParam("diag_dist"))
+		nh_.getParam("diag_dist", diag_dist);
+
+	if (nh_.hasParam("wheel_rad"))
+		nh_.getParam("wheel_rad", wheel_rad);
+	
 }
