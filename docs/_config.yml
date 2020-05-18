@@ -1,9 +1,8 @@
 # Site settings
-title: Jekyll Doc Theme
+title: Omnibase
 email: your-email@domain.com
 description: >
-  Jekyll Template for Project Websites
-  providing documentation and blog post pages.
+  Documentation of Omnibase simulator
 lang: en-US
 
 baseurl: "/omnibase" # the subpath of your site, e.g. /blog/

@@ -3,6 +3,13 @@
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 [![Build Status](https://travis-ci.org/ERC-BPGC/omnibase.svg?branch=master)](https://travis-ci.org/ERC-BPGC/omnibase)
 
+
+## About: 
+Omnibase is a simulator of a 4 wheel drive robot. 
+The robot is an omniwheeled robot and can move in any direction in the X-Y plane.  
+
+For more detailed documentation click [here](https://erc-bpgc.github.io/omnibase/).
+
 ## Installations:
 - Install ROS melodic from [ROS website](https://www.ros.org/install/).
 
