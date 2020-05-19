@@ -24,10 +24,10 @@ The simulator is divided into 3 packages and 1 meta package:
     URDFs in this package. 
 
 
-<p align="center">
+<!-- <p align="center">
   <img src="https://github.com/ERC-BPGC/omnibase/blob/master/docs/_docs/imgs/trotbot_body.png" alt="bot" width="400"/>
-</p>
-
+</p> -->
+![bot](https://github.com/ERC-BPGC/omnibase/blob/master/docs/_docs/imgs/trotbot_body.png)
 
 For simplicity the wheels have been modeled as cylinders. This choice of modelling the wheels give us similar results as of the omniwheels. 
 The robot is equiped with a 2-D lidar sensor for obstacle detection. The odometry is obtained from a gazebo plugin
