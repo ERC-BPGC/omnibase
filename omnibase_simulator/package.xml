@@ -4,12 +4,14 @@
   <description>omnibase package has a 4 omni wheeled robot</description>
 
   <maintainer email="hardesh1deshpande@gmail.com">Harshal Deshpande</maintainer>
+  <maintainer email="mihirk284@gmail.com">Mihir Kulkarni</maintainer>
 
   <author>Harshal Deshpande</author>
+  <author email="mihirk284@gmail.com">Mihir Kulkarni</author>
 
   <license>BSD</license>
 
-  <!-- <url type="website">https://github.com/ethz-asl/rotors_simulator</url> -->
+  <url type="website">https://erc-bpgc.github.io/omnibase/</url>
 
   <!-- Dependencies which this package needs to build itself. -->
   <buildtool_depend>catkin</buildtool_depend>

@@ -3,7 +3,7 @@ project(omnibase_control)
 
 add_definitions(-std=c++14)
 
-find_package(catkin_simple REQUIRED COMPONENTS
+find_package(catkin REQUIRED COMPONENTS
   roscpp
   geometry_msgs
   nav_msgs
@@ -11,19 +11,31 @@ find_package(catkin_simple REQUIRED COMPONENTS
   std_msgs
 )
 
-catkin_simple(ALL_DEPS_REQUIRED)
+#catkin_simple(ALL_DEPS_REQUIRED)
 
-catkin_package()
+# catkin_package()
 
-cs_add_library(
-	${PROJECT_NAME}
-	src/controller.cpp)
+include_directories(${catkin_INCLUDE_DIRS} include)
 
-cs_add_executable(controller_node src/controller_node.cpp)
-target_link_libraries(controller_node ${PROJECT_NAME})
+add_library(${PROJECT_NAME} src/controller.cpp)
+target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES})
 
-cs_add_executable(teleop_node src/teleop.cpp)
-target_link_libraries(teleop_node ${PROJECT_NAME})
+#cs_add_library(
+#	${PROJECT_NAME}
+#	src/controller.cpp)
 
-cs_install()
-cs_export(LIBRARIES)
+
+# cs_add_executable(controller_node src/controller_node.cpp)
+# target_link_libraries(controller_node ${PROJECT_NAME})
+
+add_executable(controller_node src/controller_node.cpp)
+target_link_libraries(controller_node ${PROJECT_NAME} ${catkin_LIBRARIES})
+
+# cs_add_executable(teleop_node src/teleop.cpp)
+# target_link_libraries(teleop_node ${PROJECT_NAME})
+
+add_executable(teleop_node src/teleop.cpp)
+target_link_libraries(teleop_node ${PROJECT_NAME} ${catkin_LIBRARIES})
+
+# cs_install()
+# cs_export(LIBRARIES)

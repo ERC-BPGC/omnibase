@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0.0)
 project(omnibase_gazebo)
 
-find_package(catkin_simple REQUIRED COMPONENTS
+find_package(catkin REQUIRED COMPONENTS
   gazebo_msgs
   geometry_msgs
   roscpp
@@ -10,7 +10,7 @@ find_package(catkin_simple REQUIRED COMPONENTS
 )
 
 
-catkin_simple(ALL_DEPS_REQUIRED)
+# catkin_simple(ALL_DEPS_REQUIRED)
 
-cs_install()
-cs_export()
+# cs_install()
+# cs_export()

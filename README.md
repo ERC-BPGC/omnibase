@@ -29,13 +29,6 @@ sudo apt install python-wstool python-catkin-tools  \
 cd ~/catkin_ws/src
 git clone https://github.com/ERC-BPGC/omnibase.git
 
-# Install dependencies from rosinstall using wstool
-wstool init
-wstool merge omnibase/omnibase_https.rosinstall
-
-# Finally download and update the repos
-wstool update
-
 # Build the workspace
 cd ..
 catkin build

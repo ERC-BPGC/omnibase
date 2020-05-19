@@ -4,17 +4,17 @@
   <version>0.0.1</version>
   <description>The omnibase_control package</description>
 
-  <maintainer email="hardesh1deshpande@gmail.com">harshal deshpande</maintainer>
+  <maintainer email="hardesh1deshpande@gmail.com">Harshal Deshpande</maintainer>
+  <maintainer email="mihirk284@gmail.com">Mihir Kulkarni</maintainer>
 
   <license>BSD</license>
 
-  <!-- <url type="website">http://wiki.ros.org/omnibase_control</url> -->
-  <author email="hardesh1deshpande@gmail.com">Jane Doe</author>
-
+  <url type="website">https://erc-bpgc.github.io/omnibase/</url>
+  <author email="hardesh1deshpande@gmail.com">Harshal Deshpande</author>
+  <author email="mihirk284@gmail.com">Mihir Kulkarni</author>
 
   <buildtool_depend>catkin</buildtool_depend>
-  <buildtool_depend>catkin_simple</buildtool_depend>
-
+  <!-- <buildtool_depend>catkin_simple</buildtool_depend> -->
   
   <build_depend>geometry_msgs</build_depend>
   <build_depend>nav_msgs</build_depend>
