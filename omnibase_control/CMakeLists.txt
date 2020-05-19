@@ -13,9 +13,9 @@ find_package(catkin REQUIRED COMPONENTS
 
 #catkin_simple(ALL_DEPS_REQUIRED)
 
-# catkin_package()
+catkin_package()
 
-include_directories(${catkin_INCLUDE_DIRS} include)
+include_directories(include ${catkin_INCLUDE_DIRS})
 
 add_library(${PROJECT_NAME} src/controller.cpp)
 target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES})
@@ -39,3 +39,6 @@ target_link_libraries(teleop_node ${PROJECT_NAME} ${catkin_LIBRARIES})
 
 # cs_install()
 # cs_export(LIBRARIES)
+
+install(TARGETS controller_node RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+install(TARGETS teleop_node RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
