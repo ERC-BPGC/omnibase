@@ -25,7 +25,7 @@ The simulator is divided into 3 packages and 1 meta package:
 
 
 <p align="center">
-  <img src="./imgs/trotbot_body.png" alt="bot" width="400"/>
+  <img src="https://github.com/ERC-BPGC/omnibase/blob/master/docs/_docs/imgs/trotbot_body.png" alt="bot" width="400"/>
 </p>
 
 
