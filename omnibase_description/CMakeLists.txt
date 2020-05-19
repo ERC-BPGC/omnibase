@@ -4,8 +4,6 @@ project(omnibase_description)
 find_package(catkin REQUIRED COMPONENTS
 	rospy
 	roscpp
-	rviz
-	urdf
 	geometry_msgs
 )
 
