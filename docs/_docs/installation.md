@@ -1,17 +1,14 @@
-# omnibase
+---
+title: Installation
+permalink: /docs/installation/
+---
 
-[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
-[![Build Status](https://travis-ci.org/ERC-BPGC/omnibase.svg?branch=master)](https://travis-ci.org/ERC-BPGC/omnibase)
+### Installations:
 
+Presently, the omnibase simulator can be installed only by building this package. To use this package follow the instructions given below:
 
-## About: 
-Omnibase is a simulator of a 4 wheel drive robot. 
-The robot is an omniwheeled robot and can move in any direction in the X-Y plane.  
-
-For more detailed documentation click [here](https://erc-bpgc.github.io/omnibase/).
-
-## Installations:
-- Install ROS melodic from [ROS website](https://www.ros.org/install/). 
+- Install ROS melodic from [ROS website](https://www.ros.org/install/).This package can also be built with ROS kinetic. 
+Though we haven't tested the package with the old version of gazebo.
 
 - Install some system dependencies by:
 ```bash
@@ -48,4 +45,3 @@ roslaunch omnibase_gazebo omnibase_world1.launch
 # To test the bot run the teleop_node
 rosrun omnibase_control teleop_node
 ```
-
