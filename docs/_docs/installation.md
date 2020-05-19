@@ -3,7 +3,6 @@ title: Installation
 permalink: /docs/installation/
 ---
 
-### Installations:
 
 Presently, the omnibase simulator can be installed only by building this package. To use this package follow the instructions given below:
 
@@ -20,28 +19,14 @@ sudo apt install python-wstool python-catkin-tools  \
 	ros-melodic-velocity-controllers
 ```
 
-- Package installation:
+- Clone repo package installations:
 ```bash
-# Clone repo 
 cd ~/catkin_ws/src
 git clone https://github.com/ERC-BPGC/omnibase.git
-
-# Build the workspace
+```
+  - Build the workspace
+```
 cd ..
 catkin build
 source devel/setup.bash
-```
-
-### Usage:
-
-To use this simulator use:
-```bash
-# To launch empty world
-roslaunch omnibase_gazebo omnibase.launch
-
-# To launch obstacle rich env
-roslaunch omnibase_gazebo omnibase_world1.launch
-
-# To test the bot run the teleop_node
-rosrun omnibase_control teleop_node
 ```

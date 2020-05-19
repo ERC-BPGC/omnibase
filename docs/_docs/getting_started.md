@@ -1,10 +1,8 @@
 ---
-title: Welcome
+title: About
 permalink: /docs/home/
 redirect_from: /docs/index.html
 ---
-
-## About
 
 Omnibase_simulator is an opensource simulator developed by a team of students from [Electronics and Robotics Club](https://erc-bpgc.github.io/) 
 at BITS Pilani, Goa Campus.
@@ -26,3 +24,11 @@ The simulator is divided into 3 packages and 1 meta package:
     URDFs in this package. 
 
 
+<p align="center">
+  <img src="./imgs/trotbot_body.png" alt="bot" width="400"/>
+</p>
+
+
+For simplicity the wheels have been modeled as cylinders. This choice of modelling the wheels give us similar results as of the omniwheels. 
+The robot is equiped with a 2-D lidar sensor for obstacle detection. The odometry is obtained from a gazebo plugin
+and is very accurate. 
