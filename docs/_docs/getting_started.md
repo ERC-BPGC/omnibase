@@ -23,11 +23,13 @@ The simulator is divided into 3 packages and 1 meta package:
   - In case you want to use different bodies or change the dynamics of the present ones then edit the 
     URDFs in this package. 
 
-
-<!-- <p align="center">
-  <img src="https://github.com/ERC-BPGC/omnibase/blob/master/docs/_docs/imgs/trotbot_body.png" alt="bot" width="400"/>
-</p> -->
-![bot](https://github.com/ERC-BPGC/omnibase/blob/master/docs/_docs/imgs/trotbot_body.jpg)
+<div class="row">
+  <div class="thumbnail">
+    <div class="image" align="center">
+        <a href="#cerulean/"><img src="https://raw.githubusercontent.com/ERC-BPGC/omnibase/master/docs/_docs/imgs/trotbot_body.jpg" class="img-responsive" width="400" alt="bot"></a>
+    </div>    
+  </div>
+</div>
 
 For simplicity the wheels have been modeled as cylinders. This choice of modelling the wheels give us similar results as of the omniwheels. 
 The robot is equiped with a 2-D lidar sensor for obstacle detection. The odometry is obtained from a gazebo plugin
