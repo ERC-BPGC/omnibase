@@ -5,7 +5,7 @@
 	<arg name="y" default="0.0" />
 	<arg name="z" default="0.0" />
 	
-	<param name="robot_description" command="$(find xacro)/xacro --inorder '$(find omnibase_description)/xacro/main_new.urdf.xacro'" />
+	<param name="robot_description" command="$(find xacro)/xacro --inorder '$(find omnibase_description)/xacro/main.urdf.xacro'" />
 	<rosparam file="$(find omnibase_control)/config/controllers.yaml" command="load"/>
 	<rosparam file="$(find omnibase_control)/config/params.yaml" command="load"/>
 
@@ -22,7 +22,7 @@
 
 	<node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -x $(arg x) -y $(arg y) -z $(arg z) -model omnibase -param robot_description"/>
 
-	<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/open_base" 
+	<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/omnibase" 
 	args="--namespace=/omnibase
 	joint_state_controller
 	front_right_joint_velocity_controller

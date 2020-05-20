@@ -5,8 +5,9 @@
   - usage
 
 
-# - title: Examples
-#   docs:
+- title: Examples
+  docs:
+    - velocity
 #   - cheatsheet
 #   - font-awesome
 #   - bootstrap
