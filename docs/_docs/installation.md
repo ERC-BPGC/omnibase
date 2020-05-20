@@ -4,10 +4,10 @@ permalink: /docs/installation/
 ---
 
 
-Presently, the omnibase simulator can be installed only by building this package. To use this package follow the instructions given below:
+Presently, the omnibase simulator can be installed only by building the packages. To use this simulator follow the instructions given below:
 
 - Install ROS melodic from [ROS website](https://www.ros.org/install/).This package can also be built with ROS kinetic. 
-Though we haven't tested the package with the old version of gazebo.
+Though we haven't tested the simulator with the old version of gazebo.
 
 - Install some system dependencies by:
 ```bash
@@ -24,7 +24,8 @@ sudo apt install python-wstool python-catkin-tools  \
 cd ~/catkin_ws/src
 git clone https://github.com/ERC-BPGC/omnibase.git
 ```
-  - Build the workspace
+
+- Build the workspace
 ```
 cd ..
 catkin build

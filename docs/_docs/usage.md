@@ -1,6 +1,6 @@
 ---
 title: Usage
-permalink: /docs/uasge/
+permalink: /docs/usage/
 ---
 
 To use this simulator you can use the following commands:
