@@ -7,14 +7,13 @@
 	
 	<param name="robot_description" command="$(find xacro)/xacro --inorder '$(find omnibase_description)/xacro/main.urdf.xacro'" />
 	<rosparam file="$(find omnibase_control)/config/controllers.yaml" command="load"/>
-	<rosparam file="$(find omnibase_control)/config/params.yaml" command="load"/>
+	<rosparam file="$(find omnibase_control)/config/params_trot.yaml" command="load"/>
 
-	
 	<node pkg="tf" type="static_transform_publisher" name="laser" args="0 0 0 0 0 0 world base_link 10"/>
 
 	<!-- Launch empty world Gazebo -->
 	<include file="$(find gazebo_ros)/launch/empty_world.launch">
-		<arg name="world_name" default="$(find omnibase_gazebo)/worlds/world_1.world"/>
+		<arg name="world_name" value="$(find omnibase_gazebo)/worlds/world_1.world"/>
 		<arg name="paused" value="false"/>
 		<arg name="gui" value="true"/>
 		<arg name="verbose" value="false"/>
