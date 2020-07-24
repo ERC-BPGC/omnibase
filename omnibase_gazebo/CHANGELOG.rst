@@ -2,8 +2,8 @@
 Changelog for package omnibase_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.2 (2020-07-25)
+------------------
 * obstacle world fix
 * docu update
 * shifted to catkin build tool

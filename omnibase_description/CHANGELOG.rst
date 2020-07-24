@@ -2,8 +2,8 @@
 Changelog for package omnibase_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.2 (2020-07-25)
+------------------
 * omnibase_description jenkins fix
 * shifted to catkin build tool
 * Merge pull request `#8 <https://github.com/ERC-BPGC/omnibase/issues/8>`_ from ERC-BPGC/structure_branch
