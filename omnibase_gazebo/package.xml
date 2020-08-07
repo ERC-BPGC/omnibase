@@ -32,6 +32,11 @@
   <exec_depend>sensor_msgs</exec_depend>
   <exec_depend>std_msgs</exec_depend>
 
+  <depend>joint_state_controller</depend>
+  <depend>joint_trajectory_controller</depend>
+  <depend>effort_controller</depend>
+  <depend>position_controllers</depend>
+  <depend>velocity_controllers</depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>

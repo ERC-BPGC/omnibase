@@ -23,4 +23,10 @@
 	<depend>roscpp</depend>
 	<depend>std_msgs</depend>
 
+	<depend>joint_state_controller</depend>
+  	<depend>joint_trajectory_controller</depend>
+  	<depend>effort_controller</depend>
+  	<depend>position_controllers</depend>
+  	<depend>velocity_controllers</depend>
+
 </package>
