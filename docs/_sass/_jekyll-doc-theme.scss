@@ -18,17 +18,17 @@ html {
   
   
   .header-container {
-    background-color: black;
-    background: url('../img/bg.jpg') no-repeat 50% 0;
+    background-color: white;
+    background: url('../img/bg1.jpg') no-repeat 50% 0;
     color: #fff;
   
     h1 {
       color: #fff;
     }
     // background-attachment: fixed;
-    background-size: cover;
-    background-position: center 30%;
-    margin-top: -37px;
+    background-size: 100% 100%;
+    background-position: center;
+    margin-top: -30px;
   }
   .navbar-container {
     font-size: 16px;
