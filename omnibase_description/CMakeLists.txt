@@ -7,8 +7,11 @@ find_package(catkin REQUIRED COMPONENTS
 	geometry_msgs
 )
 
-# catkin_simple(ALL_DEPS_REQUIRED)
+catkin_package(
+  CATKIN_DEPENDS rospy geometry_msgs roscpp
+)
 
-
-# cs_install()
-# cs_export()
+# Install
+install(DIRECTORY launch meshes urdf xacro
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)

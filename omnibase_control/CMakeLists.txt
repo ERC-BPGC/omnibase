@@ -11,34 +11,37 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
 )
 
-#catkin_simple(ALL_DEPS_REQUIRED)
-
-catkin_package()
+catkin_package(
+  INCLUDE_DIRS include
+  CATKIN_DEPENDS roscpp geometry_msgs nav_msgs rospy std_msgs
+)
 
 include_directories(include ${catkin_INCLUDE_DIRS})
 
 add_library(${PROJECT_NAME} src/controller.cpp)
 target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES})
 
-#cs_add_library(
-#	${PROJECT_NAME}
-#	src/controller.cpp)
-
-
-# cs_add_executable(controller_node src/controller_node.cpp)
-# target_link_libraries(controller_node ${PROJECT_NAME})
-
 add_executable(controller_node src/controller_node.cpp)
 target_link_libraries(controller_node ${PROJECT_NAME} ${catkin_LIBRARIES})
-
-# cs_add_executable(teleop_node src/teleop.cpp)
-# target_link_libraries(teleop_node ${PROJECT_NAME})
 
 add_executable(teleop_node src/teleop.cpp)
 target_link_libraries(teleop_node ${PROJECT_NAME} ${catkin_LIBRARIES})
 
-# cs_install()
-# cs_export(LIBRARIES)
+# Install
+install(DIRECTORY config
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
 
-install(TARGETS controller_node RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
-install(TARGETS teleop_node RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+install(TARGETS ${PROJECT_NAME}
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+)
+
+install(TARGETS controller_node teleop_node 
+  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+install(DIRECTORY include/${PROJECT_NAME}/
+  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+)
