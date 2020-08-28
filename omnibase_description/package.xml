@@ -1,6 +1,6 @@
 <package format="2">
 	<name>omnibase_description</name>
-	<version>0.0.2</version>
+	<version>1.0.1</version>
 	<description>
 		This package constains the model files of the omnibase(omniwheeled robot)
 	</description>
@@ -11,7 +11,7 @@
 	<maintainer email="hardesh1deshpande@gmail.com">Harshal Deshpande</maintainer>
 	<maintainer email="mihirk284@gmail.com">Mihir Kulkarni</maintainer>
 
-	<author>Harshal Deshpande</author>
+	<author email="hardesh1deshpande@gmail.com">Harshal Deshpande</author>
 	<author email="mihirk284@gmail.com">Mihir Kulkarni</author>
 
 
@@ -22,5 +22,11 @@
 	<depend>rospy</depend>
 	<depend>roscpp</depend>
 	<depend>std_msgs</depend>
+
+	<depend>joint_state_controller</depend>
+  	<depend>joint_trajectory_controller</depend>
+  	<depend>effort_controllers</depend>
+  	<depend>position_controllers</depend>
+  	<depend>velocity_controllers</depend>
 
 </package>

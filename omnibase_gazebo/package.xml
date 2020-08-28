@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>omnibase_gazebo</name>
-  <version>0.0.2</version>
+  <version>1.0.1</version>
   <description>The omnibase_gazebo package</description>
 
-  <maintainer email="hardesh1deshpande@gmail.com">harshal deshpande</maintainer>
+  <maintainer email="hardesh1deshpande@gmail.com">Harshal Heshpande</maintainer>
   <maintainer email="mihirk284@gmail.com">Mihir Kulkarni</maintainer>
 
   <license>BSD</license>
@@ -32,6 +32,11 @@
   <exec_depend>sensor_msgs</exec_depend>
   <exec_depend>std_msgs</exec_depend>
 
+  <depend>joint_state_controller</depend>
+  <depend>joint_trajectory_controller</depend>
+  <depend>effort_controllers</depend>
+  <depend>position_controllers</depend>
+  <depend>velocity_controllers</depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>

@@ -6,11 +6,11 @@
 		<arg name="world_name" default="worlds/empty.world"/>
 		<arg name="paused" value="true"/>
 		<arg name="gui" value="true"/>
-		<arg name="verbose" value="true"/>
+		<arg name="verbose" value="false"/>
 	</include>	
 	
 	<!-- Spawn the urdf model -->
-	<param name="robot_description" command="$(find xacro)/xacro --inorder '$(find omnibase_description)/xacro/main_new.urdf.xacro'" />
+	<param name="robot_description" command="$(find xacro)/xacro --inorder '$(find omnibase_description)/xacro/main.urdf.xacro'" />
 
 	<!-- load controllers -->
 	<rosparam file="$(find omnibase_control)/config/controllers.yaml" command="load"/>
@@ -30,7 +30,7 @@
 	
 	<node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -x $(arg x) -y $(arg y) -z $(arg z) -model omnibase -param robot_description"/>
 
-	<!-- <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ns="omnibase"/> -->
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ns="omnibase"/>
 	
 	<node
 		name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">

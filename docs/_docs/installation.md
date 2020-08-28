@@ -3,11 +3,19 @@ title: Installation
 permalink: /docs/installation/
 ---
 
+This package has been tested on Ubuntu 18.04 with ROS melodic. So I would suggest you to install 
+ROS melodic from the [ROS website](https://www.ros.org/install/). This package can also be built from 
+source with ROS kinetic. Though we haven't tested the simulator with the old version of gazebo.
 
-Presently, the omnibase simulator can be installed only by building the packages. To use this simulator follow the instructions given below:
+Omnibase simulator can be installed on Ubuntu 18.04 with ROS melodic using the following commands:
+```bash
+sudo apt update
+sudo apt install ros-melodic-omnibase-control 
+sudo apt install ros-melodic-omnibase-gazebo 
+sudo apt install ros-melodic-omnibase-description
+```
 
-- Install ROS melodic from [ROS website](https://www.ros.org/install/).This package can also be built with ROS kinetic. 
-Though we haven't tested the simulator with the old version of gazebo.
+To build the simulator from source follow the following instructions:
 
 - Install some system dependencies by:
 ```bash
@@ -31,3 +39,7 @@ cd ..
 catkin build
 source devel/setup.bash
 ```
+
+#### Note: 
+IF YOU FACE ANY PROBLEMS THEN PLEASE RAISE ISSUES IN THIS REPOSITORY: [omnibase](https://github.com/ERC-BPGC/omnibase)
+
