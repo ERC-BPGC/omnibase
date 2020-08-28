@@ -2,6 +2,14 @@
 Changelog for package omnibase_control
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* version bump
+* fixed install issues
+* minor fixes
+* updated package.xmls
+* Contributors: Harshal Deshpande
+
 0.0.2 (2020-07-25)
 ------------------
 * solved controller_node issue
