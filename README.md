@@ -1,60 +1,158 @@
-# omnibase
+# Jekyll Doc Theme
 
-| -                              | Tag                                                                                                                                                             |
-|---------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| License                               | [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)                                       |
-| Travis Build Status                   | [![Build Status](https://travis-ci.org/ERC-BPGC/omnibase.svg?branch=master)](https://travis-ci.org/ERC-BPGC/omnibase)                                           |
-| Jenkins Build Status (ROS Build Farm) | [![Build Status](http://build.ros.org/job/Mdev__omnibase__ubuntu_bionic_amd64/badge/icon)](http://build.ros.org/job/Mdev__omnibase__ubuntu_bionic_amd64/) |
+Go to [the website](https://aksakalli.github.io/jekyll-doc-theme/) for detailed information and demo.
 
-## About: 
-Omnibase is a simulator of a 4 wheel drive robot. The robot is an omniwheeled robot and can move in any direction in the X-Y plane.  
+## Running locally
 
-For more detailed documentation click [here](https://erc-bpgc.github.io/omnibase/).
+You need Ruby and gem before starting, then:
 
-## Installations:
-- Install ROS melodic from [ROS website](https://www.ros.org/install/). 
-
-- Install some system dependencies by:
 ```bash
-sudo apt install python-wstool python-catkin-tools  \
-	ros-melodic-joint-state-controller  \
-	ros-melodic-effort-controllers  \
-	ros-melodic-joint-trajectory-controller  \
-	ros-melodic-position-controllers  \
-	ros-melodic-velocity-controllers
+# install bundler
+gem install bundler
+
+# clone the project
+git clone https://github.com/aksakalli/jekyll-doc-theme.git
+cd jekyll-doc-theme
+
+# install dependencies
+bundle install
+
+# run jekyll with dependencies
+bundle exec jekyll serve
 ```
 
-- Package installation from rosdep:
-```bash
-sudo apt update
-sudo apt install ros-melodic-omnibase-control 
-sudo apt install ros-melodic-omnibase-gazebo 
-sudo apt install ros-melodic-omnibase-description
+### Theme Assets
+
+As of the move to support [Github Pages](https://pages.github.com/) a number of files have been relocated to the `/asset` folder.
+- css/
+- fonts/
+- img/
+- js/
+- 404.html
+- allposts.html
+- search.json
+
+## Docker
+
+Alternatively, you can deploy it using the multi-stage [Dockerfile](Dockerfile)
+that serves files from Nginx for better performance in production.
+
+Build the image for your site's `JEKYLL_BASEURL`:
+
+```
+docker build --build-arg JEKYLL_BASEURL="/your-base/url" -t jekyll-doc-theme .
 ```
 
-- Package installation from source:
-```bash
-# Clone repo 
-cd ~/catkin_ws/src
-git clone https://github.com/ERC-BPGC/omnibase.git
+(or leave it empty for root: `JEKYLL_BASEURL=""`) and serve it:
 
-# Build the workspace
-cd ..
-catkin build
-source devel/setup.bash
+```
+docker run -p 8080:80 jekyll-doc-theme
 ```
 
-### Usage:
+## Github Pages
 
-To use this simulator use:
-```bash
-# To launch empty world
-roslaunch omnibase_gazebo omnibase.launch
+The theme is also available to [Github Pages](https://pages.github.com/) by making use of the [Remote Theme](https://github.com/benbalter/jekyll-remote-theme) plugin:
 
-# To launch obstacle rich env
-roslaunch omnibase_gazebo omnibase_world1.launch
-
-# To test the bot run the teleop_node
-rosrun omnibase_control teleop_node
+**Gemfile**
+```
+# If you want to use GitHub Pages, remove the "gem "jekyll"" above and
+# uncomment the line below. To upgrade, run `bundle update github-pages`.
+gem "github-pages", group: :jekyll_plugins
 ```
 
+**_config.yml**
+```
+# Configure the remote_theme plugin with the gh-pages branch
+# or the specific tag
+remote_theme: aksakalli/jekyll-doc-theme@gh-pages   
+```
+
+### Theme Assets
+
+Files from your project will override any theme file with the same name.  For example, the most comment use case for this, would be to modify your sites theme or colors.   To do this, the following steps should be taken:
+
+1) Copy the contents of the `aksakalli/jekyll-doc-theme/asset/css/main.scss` to your own project (maintaining folder structure)
+2) Modify the variables you wish to use prior to the import statements, for example:
+
+```
+// Bootstrap variable overrides
+$grid-gutter-width: 30px !default;
+$container-desktop: (900px + $grid-gutter-width) !default;
+$container-large-desktop: (900px + $grid-gutter-width) !default;
+
+@import // Original import statement
+  {% if site.bootwatch %}
+    "bootswatch/{{site.bootwatch | downcase}}/variables",
+  {% endif %}
+
+  "bootstrap",
+
+  {% if site.bootwatch %}
+    "bootswatch/{{site.bootwatch | downcase}}/bootswatch",
+  {% endif %}
+
+  "syntax-highlighting",
+  "typeahead",
+  "jekyll-doc-theme"
+;
+
+// More custom overrides.
+```
+
+3) Import or override any other theme styles after the standard imports
+
+## Projects using Jekyll Doc Theme
+
+* http://teavm.org/
+* https://su2code.github.io/
+* https://launchany.github.io/mvd-template/
+* https://knowit.github.io/kubernetes-workshop/
+* https://rec.danmuji.org/
+* https://nethesis.github.io/icaro/
+* http://ai.cs.ucl.ac.uk/
+* http://tizonia.org
+* https://lakka-switch.github.io/documentation/
+* https://cs.anu.edu.au/cybersec/issisp2018/
+* http://www.channotation.org/
+* http://nemo.apache.org/
+* https://csuf-acm.github.io/
+* https://extemporelang.github.io/
+* https://media-ed-online.github.io/intro-web-dev-2018spr/
+* https://midlevel.github.io/MLAPI/
+* https://pulp-platform.github.io/ariane/docs/home/
+* https://koopjs.github.io/
+* https://developer.apiture.com/
+* https://contextmapper.github.io/
+* https://www.bruttin.com/CosmosDbExplorer/
+* http://mosaic-lopow.github.io/dash7-ap-open-source-stack/
+* http://www.vstream.ml/
+* http://docs.fronthack.com/
+* https://repaircafeportsmouth.org.uk/
+* http://brotherskeeperkenya.com/
+* https://hschne.at/Fluentast/
+* https://zoe-analytics.eu/
+* https://uli.kmz-brno.cz/
+* https://lime.software/
+* https://weft.aka.farm
+* https://microros.github.io/
+* https://citystoriesucla.github.io/citystories-LA-docs
+* http://lessrt.org/
+* http://kivik.io/
+* https://www.iot-kit.nl/
+* http://justindietz.com/
+* https://universalsplitscreen.github.io/
+* https://docs.oneflowcloud.com/
+* https://actlist.silentsoft.org/
+* https://teevid.github.io
+* https://developer.ipums.org
+* https://osmpersia.github.io (right-to-left)
+* https://ecmlpkdd2019.org
+* https://idle.land
+* https://mqless.com
+* https://muict-seru.github.io/
+* https://www.invoice-x.org
+* https://www.devops.geek.nz
+
+## License
+
+Released under [the MIT license](LICENSE).
