@@ -4,6 +4,7 @@
 	<xacro:include filename="$(find omnibase_description)/xacro/rim.urdf.xacro"/>
 	<xacro:include filename="$(find omnibase_description)/xacro/gazebo.urdf.xacro"/>
 	<xacro:include filename="$(find omnibase_description)/xacro/wheel.urdf.xacro" />
+	<xacro:include filename="$(find omnibase_description)/xacro/intel_realsense.urdf.xacro" />
 
 	<link name="origin_link"/>
 	<link name="base_link">
@@ -82,6 +83,14 @@
                izz="0.001" />
     </inertial>
   	</link>
+
+	<link name="base_cam"/>
+	<joint name="cam_joint" type="fixed">
+		<origin xyz="0.06 0 0.22" rpy="0 0 0" />
+		<parent link="base_link"/>
+		<child link="base_cam" />
+	</joint>
+	<xacro:intel_realsense_mount prefix="omnibase" topic="realsense" parent_link="base_cam"/>
 
   	<joint name="body_joint" type="fixed">
   		<parent link="base_link"/>
