@@ -7,7 +7,11 @@
 | Jenkins Build Status (ROS Build Farm) | [![Build Status](http://build.ros.org/job/Mdev__omnibase__ubuntu_bionic_amd64/badge/icon)](http://build.ros.org/job/Mdev__omnibase__ubuntu_bionic_amd64/) |
 
 ## About: 
-Omnibase is a simulator of a 4 wheel drive robot. The robot is an omniwheeled robot and can move in any direction in the X-Y plane.  
+<p align="center">
+<img src="./media/omnibase_movement_1.gif" width="600" height="400" />
+</p>
+
+Omnibase is a simulator of a 4 wheel drive robot. The robot is an omniwheeled robot and can move in any direction in the X-Y plane and rotate about its axis.  
 
 For more detailed documentation click [here](https://erc-bpgc.github.io/omnibase/).
 
@@ -23,14 +27,15 @@ sudo apt install python-wstool python-catkin-tools  \
 	ros-melodic-position-controllers  \
 	ros-melodic-velocity-controllers
 ```
-
-- Package installation from rosdep:
+- Package installation from debian:
 ```bash
 sudo apt update
 sudo apt install ros-melodic-omnibase-control 
 sudo apt install ros-melodic-omnibase-gazebo 
 sudo apt install ros-melodic-omnibase-description
 ```
+
+-------------------------------------------------------------
 
 - Package installation from source:
 ```bash
