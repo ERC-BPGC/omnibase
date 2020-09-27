@@ -63,7 +63,7 @@
     <visual>
     	<origin xyz="0 0 0.0" rpy="0 0 0"/>
     	<geometry>
-       		<mesh filename="package://omnibase_description/meshes/lds.stl" scale="0.00085 0.00085 0.00085"/>
+       		<mesh filename="package://omnibase_description/meshes/lds.stl" scale="0.0008 0.0008 0.0008"/>
       	</geometry>
       	<material name="dark"/>
     </visual>
@@ -86,7 +86,7 @@
 
 	<link name="base_cam"/>
 	<joint name="cam_joint" type="fixed">
-		<origin xyz="0.06 0 0.22" rpy="0 0 0" />
+		<origin xyz="0.06 0 0.21" rpy="0 0 0" />
 		<parent link="base_link"/>
 		<child link="base_cam" />
 	</joint>

@@ -83,7 +83,7 @@
         <origin xyz="0.0115 0 0.0100" rpy="1.570796 0 1.570796" />
         <geometry>
           <!-- Origin of this mesh is the base of the bracket. -->
-          <mesh filename="package://omnibase_description/meshes/d415.stl" />
+          <mesh filename="package://omnibase_description/meshes/d415.stl" scale="0.8 0.8 0.8"/>
         </geometry>
         <material name="white" />
       </visual>
