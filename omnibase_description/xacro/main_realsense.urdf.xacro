@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="omnibase">
+
+	<xacro:include filename="$(find omnibase_description)/xacro/rim.urdf.xacro"/>
+	<xacro:include filename="$(find omnibase_description)/xacro/gazebo.urdf.xacro"/>
+	<xacro:include filename="$(find omnibase_description)/xacro/wheel.urdf.xacro" />
+	<xacro:include filename="$(find omnibase_description)/xacro/intel_realsense.urdf.xacro" />
+
+	<link name="origin_link"/>
+	<link name="base_link">
+	<inertial>
+		<mass value="2"/>
+		<inertia
+			ixx="0.0100"
+			ixy="0"
+			ixz="0"
+			iyy="0.0065"
+			iyz="0"
+			izz="0.0163"/>
+	</inertial>
+	<visual>
+		<geometry>
+			<mesh filename="package://omnibase_description/meshes/trotbot.dae" />
+		</geometry>
+		
+	</visual>
+	<collision>
+		<geometry>
+			<mesh filename="package://omnibase_description/meshes/trotbot.dae" />
+		</geometry>
+	</collision>
+
+	</link>
+
+
+	<joint name="base_joint" type="fixed">
+		<parent link="origin_link" />
+		<child link="base_link" />
+		<origin xyz="0 0 0.02"/>
+	</joint>
+
+	<xacro:omni_wheel wheel_prefix="front_right">
+		<origin xyz="0.22 0.22 0" rpy="1.570796326794896 0 -0.78539816339"/>
+	</xacro:omni_wheel>	
+	<xacro:omni_wheel wheel_prefix="front_left">
+		<origin xyz="0.22 -0.22 0" rpy="1.570796326794896 0 -2.35619449019"/>
+	</xacro:omni_wheel>
+	<xacro:omni_wheel wheel_prefix="back_left">
+		<origin xyz="-0.22 -0.22 0" rpy="1.570796326794896 0 2.35619449019"/>
+	</xacro:omni_wheel>	
+	<xacro:omni_wheel wheel_prefix="back_right">
+		<origin xyz="-0.22 0.22 0" rpy="1.570796326794896 0 0.78539816339"/>
+	</xacro:omni_wheel>
+
+	<joint name="scan_joint" type="fixed">
+    	<parent link="base_link"/>
+    	<child link="base_scan"/>
+    	<origin xyz="-0.005 0 0.235" rpy="0 0 0"/>
+  	</joint>
+
+
+	<link name="base_scan">
+    <visual>
+    	<origin xyz="0 0 0.0" rpy="0 0 0"/>
+    	<geometry>
+       		<mesh filename="package://omnibase_description/meshes/lds.stl" scale="0.0008 0.0008 0.0008"/>
+      	</geometry>
+      	<material name="dark"/>
+    </visual>
+
+    <!-- <collision>
+      <origin xyz="0.015 0 -0.0065" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.0315" radius="0.055"/>
+      </geometry>
+    </collision> -->
+
+    <inertial>
+      <mass value="0.114" />
+      <origin xyz="0 0 0" />
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0"
+               iyy="0.001" iyz="0.0"
+               izz="0.001" />
+    </inertial>
+  	</link>
+
+	<link name="base_cam"/>
+	<joint name="cam_joint" type="fixed">
+		<origin xyz="0.06 0 0.21" rpy="0 0 0" />
+		<parent link="base_link"/>
+		<child link="base_cam" />
+	</joint>
+	<xacro:intel_realsense_mount prefix="omnibase" topic="realsense" parent_link="base_cam"/>
+
+  	<joint name="body_joint" type="fixed">
+  		<parent link="base_link"/>
+  		<child link="body_link"/>
+  		<origin xyz="0 0 0.03" rpy="1.57 0 3.14"/>
+  	</joint>
+
+  	<link name="body_link">
+      	<inertial>
+      		<mass value="0.1" />
+      		<origin xyz="0 0 0" />
+      		<inertia 	ixx="0.000056443" ixy="0.0" ixz="0.0"
+               			iyy="0.0012923047" iyz="0.0"
+               			izz="0.000113232" />
+    	</inertial>
+  	</link>
+
+</robot>

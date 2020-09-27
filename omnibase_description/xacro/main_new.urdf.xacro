@@ -64,7 +64,7 @@
     <visual>
     	<origin xyz="0 0 0.0" rpy="0 0 0"/>
     	<geometry>
-       		<mesh filename="package://omnibase_description/meshes/lds.stl" scale="0.0003 0.0003 0.0003"/>
+       		<mesh filename="package://omnibase_description/meshes/lds.stl" scale="0.0008 0.0008 0.0008"/>
       	</geometry>
       	<material name="dark"/>
     </visual>
