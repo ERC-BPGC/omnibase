@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>omnibase_gazebo</name>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
   <description>The omnibase_gazebo package</description>
 
   <maintainer email="hardesh1deshpande@gmail.com">Harshal Heshpande</maintainer>

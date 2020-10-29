@@ -2,8 +2,8 @@
 Changelog for package omnibase_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.2 (2020-10-29)
+------------------
 * Merge remote-tracking branch 'origin/master'
 * new launch and urdf files
 * Contributors: Archit Rungta, Harshal Deshpande

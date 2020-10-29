@@ -2,8 +2,8 @@
 Changelog for package omnibase_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.2 (2020-10-29)
+------------------
 * Merge remote-tracking branch 'origin/master'
 * minor changes in the model
 * new launch and urdf files
