@@ -2,6 +2,9 @@
 Changelog for package omnibase_control
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 1.0.1 (2020-08-28)
 ------------------
 * version bump
