@@ -2,6 +2,14 @@
 Changelog for package omnibase_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.0.2 (2020-10-29)
+------------------
+* Merge remote-tracking branch 'origin/master'
+* minor changes in the model
+* new launch and urdf files
+* Realsense D435 added to model
+* Contributors: Archit Rungta, Harshal Deshpande
+
 1.0.1 (2020-08-28)
 ------------------
 * version bump
