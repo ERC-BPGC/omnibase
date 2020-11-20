@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>http://localhost:4000/omnibase/docs/cheatsheet/</loc>
+<lastmod>2020-11-20T16:12:20+00:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/omnibase/docs/velocity/</loc>
+<lastmod>2020-11-20T16:12:20+00:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/omnibase/docs/home/</loc>
+<lastmod>2020-11-20T16:12:20+00:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/omnibase/docs/installation/</loc>
+<lastmod>2020-11-20T16:12:20+00:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/omnibase/docs/usage/</loc>
+<lastmod>2020-11-20T16:12:20+00:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/omnibase/blog/2020/05/20/Design/</loc>
+<lastmod>2020-05-20T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/omnibase/allposts.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/omnibase/</loc>
+</url>
+</urlset>

@@ -1,0 +1,42 @@
+[
+
+  
+    
+    
+    {
+      "title": "About",
+      "url": "/omnibase/docs/home/"
+    },
+  
+    
+    
+    {
+      "title": "Installation",
+      "url": "/omnibase/docs/installation/"
+    },
+  
+    
+    
+    {
+      "title": "Usage",
+      "url": "/omnibase/docs/usage/"
+    },
+  
+
+  
+    
+    
+    {
+      "title": "Velocity Parameterization",
+      "url": "/omnibase/docs/velocity/"
+    },
+  
+
+
+  
+  {
+  "title": "Inspiration and Design",
+  "url": "/omnibase/blog/2020/05/20/Design/"
+  }
+  
+]
