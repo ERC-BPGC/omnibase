@@ -12,6 +12,7 @@ controller::controller(ros::NodeHandle& nh, ros::NodeHandle& nh_private):nh_(nh)
 	get_params();
 
 	vel_sub = nh_.subscribe("cmd_vel", 5, &controller::cmd_vel_cb, this);
+	odom_sub_ = nh_.subscribe("odom", 1, &controller::odom_cb, this);
 
 	front_right_cmd_pub = nh_.advertise<std_msgs::Float64>("/omnibase/front_right_joint_velocity_controller/command",10);
 	front_left_cmd_pub = nh_.advertise<std_msgs::Float64>("/omnibase/front_left_joint_velocity_controller/command",10);
@@ -38,6 +39,24 @@ void controller::init_vars()
 	yaw = 0;
 }
 
+void controller::odom_cb(const nav_msgs::Odometry &odom){
+  static tf2_ros::TransformBroadcaster br;
+  geometry_msgs::TransformStamped transformStamped;
+  
+  transformStamped.header.stamp = ros::Time::now();
+  transformStamped.header.frame_id = "world";
+  transformStamped.child_frame_id = "origin_link";
+  transformStamped.transform.translation.x = odom.pose.pose.position.x;
+  transformStamped.transform.translation.y = odom.pose.pose.position.y;
+  transformStamped.transform.translation.z = odom.pose.pose.position.z;
+
+  transformStamped.transform.rotation.x = odom.pose.pose.orientation.x;
+  transformStamped.transform.rotation.y = odom.pose.pose.orientation.y;
+  transformStamped.transform.rotation.z = odom.pose.pose.orientation.z;
+  transformStamped.transform.rotation.w = odom.pose.pose.orientation.w;
+
+  br.sendTransform(transformStamped);
+}
 
 void controller::cmd_vel_cb(const geometry_msgs::Twist &vel)
 {	

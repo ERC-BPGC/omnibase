@@ -9,11 +9,12 @@ find_package(catkin REQUIRED COMPONENTS
   nav_msgs
   rospy
   std_msgs
+  tf2_ros
 )
 
 catkin_package(
   INCLUDE_DIRS include
-  CATKIN_DEPENDS roscpp geometry_msgs nav_msgs rospy std_msgs
+  CATKIN_DEPENDS roscpp geometry_msgs nav_msgs rospy std_msgs tf2_ros
 )
 
 include_directories(include ${catkin_INCLUDE_DIRS})

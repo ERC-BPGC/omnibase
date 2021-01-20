@@ -38,6 +38,8 @@
   <depend>position_controllers</depend>
   <depend>velocity_controllers</depend>
 
+  <depend>omnibase_control</depend>
+
   <!-- The export tag contains other, unspecified, tags -->
   <export>
     <!-- Other tools can request additional information be placed here -->
